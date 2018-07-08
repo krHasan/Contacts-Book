@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInController">
+   <top>
+      <HBox prefHeight="120.0" prefWidth="800.0" style="-fx-background-color: #40579A;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="120.0" prefWidth="800.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="12.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logo.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="WAIT" />
+                     </cursor>
+                  </ImageView>
+                  <Label id="heading" layoutX="228.0" layoutY="10.0" stylesheets="@../css/signIn.css" text="Fashion World" />
+                  <Label id="subtitle" layoutX="291.0" layoutY="66.0" stylesheets="@../css/signIn.css" text="Contact Manager" textFill="#fffdfd">
+                     <font>
+                        <Font name="Purisa" size="24.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+         </children></HBox>
+   </top>
+   <left>
+      <VBox prefHeight="472.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="472.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <center>
+      <GridPane fx:id="gridPane" maxHeight="380.0" maxWidth="400.0" vgap="5.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="48.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="307.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="43.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="8.0" minHeight="1.0" prefHeight="8.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="username" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <PasswordField fx:id="password" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="forgotPassword" alignment="CENTER" prefWidth="120.0" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="Forgot Password" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Label>
+            <Label fx:id="newUser" alignment="CENTER" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="New User" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Label>
+            <Label fx:id="warning" alignment="TOP_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button minWidth="80.0" mnemonicParsing="false" prefHeight="30.0" stylesheets="@../css/global/button.css" text="Sign In" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

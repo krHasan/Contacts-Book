@@ -1,0 +1,5 @@
+.label {
+	-fx-min-height: 26px;
+	-fx-pref-height: 26px;
+	-fx-max-height: 26px;
+}

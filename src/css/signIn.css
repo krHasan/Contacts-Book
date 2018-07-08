@@ -1,0 +1,30 @@
+.lbl-as-button {
+	-fx-min-height: 32px;
+	-fx-pref-height: 32px;
+	-fx-max-height: 32px;
+	-fx-min-width: 120px;
+	-fx-pref-width: 120px;
+	-fx-background-radius: 3px;
+}
+
+.lbl-as-button:hover {
+	-fx-background-color: #5B6A97;
+    -fx-text-fill: #fdfdfd;
+  	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 3px, 8px);
+}
+
+
+#heading {
+	-fx-text-fill: linear-gradient(aliceblue, white);
+	-fx-font-size: 50px;
+	-fx-font-weight: bold;
+	-fx-font-family: 'Comic Sans MS' sans-serif;
+	-fx-effect: dropshadow(three-pass-box, #333, 10, 0, 5px, 5px);
+}
+
+#subtitle {
+	-fx-text-fill: linear-gradient(white, aliceblue);
+	-fx-font-size: 24px;
+	-fx-font-family: 'Purisa', sans-serif;
+	-fx-effect: dropshadow(three-pass-box, #333, 10, 0, 5px, 5px);	
+}
