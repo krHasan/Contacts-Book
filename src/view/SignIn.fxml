@@ -18,7 +18,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInController">
    <top>
-      <HBox prefHeight="120.0" prefWidth="800.0" style="-fx-background-color: #40579A;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="120.0" prefWidth="800.0">
                <children>
@@ -46,7 +46,7 @@
       <VBox prefHeight="472.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <GridPane fx:id="gridPane" maxHeight="380.0" maxWidth="400.0" vgap="5.0" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gridPane" maxHeight="380.0" maxWidth="400.0" minHeight="380.0" minWidth="400.0" prefHeight="380.0" prefWidth="400.0" vgap="5.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="48.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="324.0" minWidth="10.0" prefWidth="307.0" />
@@ -66,9 +66,9 @@
             <RowConstraints maxHeight="26.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
             <TextField fx:id="username" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
             <PasswordField fx:id="password" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label fx:id="forgotPassword" alignment="CENTER" prefWidth="120.0" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="Forgot Password" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="BOTTOM">
                <cursor>
@@ -84,10 +84,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Label alignment="BOTTOM_CENTER" stylesheets="@../css/global/label.css" text="Label" textFill="#d00606" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
    </center>
    <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <HBox prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </bottom>
 </BorderPane>

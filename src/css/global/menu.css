@@ -1,0 +1,56 @@
+.menu-bar {
+	-fx-background-color: #232E7B;
+}
+
+.menu .label {
+	-fx-text-fill: #fdfdfd;
+	-fx-label-padding: 0px 5px 0px 5px;
+}
+
+.menu-item .label {
+	-fx-text-fill: black;
+}
+
+.menu-item:focused {
+     -fx-background-color: #0096C9;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: fdfdfd;
+}
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0 6 6 6, 0 5 5 5, 0 4 4 4;
+/*    -fx-padding: 0.666667em 0.083333em 0.666667em 0.083333em;  8 1 8 1 */
+    -fx-padding: 0.333333em 0.083333em 0.666667em 0.083333em; /* 4 1 8 1 */
+}
+
+#mnuDashboard > .label{
+    -fx-graphic: url("/images/dashboard.png");
+}
+
+#mnuNew > .label{
+    -fx-graphic: url("/images/newContact.png");
+}
+
+#mnuContact > .label{
+    -fx-graphic: url("/images/list.png");
+}
+
+#mnuDelete > .label{
+    -fx-graphic: url("/images/delete.png");
+}
+
+#mnuSignOut > .label{
+    -fx-graphic: url("/images/exit.png");
+}
+
+#mnuPassword > .label{
+    -fx-graphic: url("/images/settings.png");
+}
+
+#mnuDeveloper > .label{
+    -fx-graphic: url("/images/developer.png");
+}

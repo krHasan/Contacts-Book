@@ -15,7 +15,7 @@
 
 
 #heading {
-	-fx-text-fill: linear-gradient(aliceblue, white);
+	-fx-text-fill: linear-gradient(#e0f2f1, #80cbc4);
 	-fx-font-size: 50px;
 	-fx-font-weight: bold;
 	-fx-font-family: 'Comic Sans MS' sans-serif;
@@ -23,7 +23,7 @@
 }
 
 #subtitle {
-	-fx-text-fill: linear-gradient(white, aliceblue);
+	-fx-text-fill: linear-gradient(#a7ffeb, #64ffda);
 	-fx-font-size: 24px;
 	-fx-font-family: 'Purisa', sans-serif;
 	-fx-effect: dropshadow(three-pass-box, #333, 10, 0, 5px, 5px);	
