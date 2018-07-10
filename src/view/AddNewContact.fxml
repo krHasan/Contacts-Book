@@ -103,7 +103,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label alignment="BOTTOM_CENTER" stylesheets="@../css/global/label.css" text="Label" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <Label alignment="BOTTOM_CENTER" stylesheets="@../css/global/warningLabel.css" text="Label" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
    </center>

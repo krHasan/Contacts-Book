@@ -1,0 +1,6 @@
+.label {
+	-fx-min-height: 20px;
+	-fx-pref-height: 20px;
+	-fx-max-height: 20px;
+	-fx-text-fill: #ff2233;
+}
