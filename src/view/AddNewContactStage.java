@@ -6,15 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AddContactStage extends Application {
+public class AddNewContactStage extends Application {
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage addNewContactStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("AddContact.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("AddNewContact.fxml"));
 			Scene scene = new Scene(root, 800, 600);
-			primaryStage.setTitle("Add New Contact");
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			addNewContactStage.setTitle("Add New Contact");
+			addNewContactStage.setScene(scene);
+			addNewContactStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

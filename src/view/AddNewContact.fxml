@@ -24,21 +24,21 @@
                 <Menu mnemonicParsing="false" text="File">
                   <items>
                     <MenuItem id="mnuDashboard" mnemonicParsing="false" text="  Dashboard" />
-                        <MenuItem id="mnuNew" mnemonicParsing="false" text="  Add New Contact" />
-                        <MenuItem id="mnuContact" mnemonicParsing="false" text="  Contact List" />
-                        <MenuItem id="mnuDelete" mnemonicParsing="false" text="  Delete Contact" />
+                        <MenuItem id="mnuAddNewContact" mnemonicParsing="false" text="  Add New Contact" />
+                        <MenuItem id="mnuContactsList" mnemonicParsing="false" text="  Contacts List" />
+                        <MenuItem id="mnuDeleteContact" mnemonicParsing="false" text="  Delete Contact" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem id="mnuSignOut" mnemonicParsing="false" text="  Contact List" />
+                        <MenuItem id="mnuSignOut" mnemonicParsing="false" text="  Sign Out" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="  Delete Contact">
+                <Menu mnemonicParsing="false" text="Settings">
                   <items>
-                    <MenuItem id="mnuPassword" mnemonicParsing="false" text="  Password Change" />
+                    <MenuItem id="mnuSystemSettings" mnemonicParsing="false" text="  System Settings" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="About">
                   <items>
-                    <MenuItem id="mnuDeveloper" mnemonicParsing="false" text="  Developer Contact" />
+                    <MenuItem id="mnAboutDeveloper" mnemonicParsing="false" text="  About Developer" />
                   </items>
                 </Menu>
               </menus>

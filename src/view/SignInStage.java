@@ -7,15 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class SignIn extends Application {
+public class SignInStage extends Application {
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage signInStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
 			Scene scene = new Scene(root,800,600);
-			primaryStage.setTitle("Welcome to Fashion World");
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			signInStage.setTitle("Welcome to Fashion World");
+			signInStage.setScene(scene);
+			signInStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -8,13 +8,13 @@ import javafx.stage.Stage;
 
 public class EditContactStage extends Application {
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage editContactStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("EditContact.fxml"));
 			Scene scene = new Scene(root,800,600);
-			primaryStage.setTitle("Edit Contact");
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			editContactStage.setTitle("Edit Contact");
+			editContactStage.setScene(scene);
+			editContactStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}

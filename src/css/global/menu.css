@@ -31,26 +31,26 @@
     -fx-graphic: url("/images/dashboard.png");
 }
 
-#mnuNew > .label{
-    -fx-graphic: url("/images/newContact.png");
+#mnuAddNewContact > .label{
+    -fx-graphic: url("/images/addNewContact.png");
 }
 
-#mnuContact > .label{
-    -fx-graphic: url("/images/list.png");
+#mnuContactsList > .label{
+    -fx-graphic: url("/images/contactsList.png");
 }
 
-#mnuDelete > .label{
-    -fx-graphic: url("/images/delete.png");
+#mnuDeleteContact > .label{
+    -fx-graphic: url("/images/deleteContact.png");
 }
 
 #mnuSignOut > .label{
-    -fx-graphic: url("/images/exit.png");
+    -fx-graphic: url("/images/signOut.png");
 }
 
-#mnuPassword > .label{
-    -fx-graphic: url("/images/settings.png");
+#mnuSystemSettings > .label{
+    -fx-graphic: url("/images/systemSettings.png");
 }
 
-#mnuDeveloper > .label{
-    -fx-graphic: url("/images/developer.png");
+#mnAboutDeveloper > .label{
+    -fx-graphic: url("/images/aboutDeveloper.png");
 }

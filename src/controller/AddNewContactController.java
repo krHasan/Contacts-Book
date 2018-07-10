@@ -2,6 +2,6 @@ package controller;
 
 import javafx.fxml.FXML;
 
-public class AddContactController {
+public class AddNewContactController {
 
 }
