@@ -1,0 +1,6 @@
+.label {
+	-fx-text-fill: #333;
+	-fx-font-size: 24px;
+	-fx-font-weight: bold;
+	-fx-font-family: 'Ubuntu';
+}
