@@ -1,8 +1,180 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+	<top>
+		<VBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
+			<children>
+				<MenuBar stylesheets="@../css/global/menu.css">
+					<menus>
+						<Menu mnemonicParsing="false" text="File">
+							<items>
+								<MenuItem id="mnuDashboard" mnemonicParsing="false" text=" Dashboard" />
+								<MenuItem id="mnuAddNewContact" mnemonicParsing="false" text=" Add New Contact" />
+								<MenuItem id="mnuContactsList" mnemonicParsing="false" text=" Contacts List" />
+								<MenuItem id="mnuDeleteContact" mnemonicParsing="false" text=" Delete Contact" />
+								<SeparatorMenuItem mnemonicParsing="false" />
+								<MenuItem id="mnuSignOut" mnemonicParsing="false" text=" Sign Out" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="Settings">
+							<items>
+								<MenuItem id="mnuSystemSettings" mnemonicParsing="false" text=" System Settings" />
+							</items>
+						</Menu>
+						<Menu mnemonicParsing="false" text="About">
+							<items>
+								<MenuItem id="mnAboutDeveloper" mnemonicParsing="false" text=" About Developer" />
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+				<GridPane prefHeight="90.0">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+					</columnConstraints>
+					<rowConstraints>
+						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Label stylesheets="@../css/global/topBoxLabel.css" text="Dashboard" GridPane.halignment="CENTER" />
+					</children>
+				</GridPane>
+			</children>
+		</VBox>
+	</top>
+	<center>
+		<GridPane hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="288.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="182.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<StackPane prefHeight="150.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+					<children>
+						<PieChart title="Contacts Overview" />
+					</children>
+				</StackPane>
+				<GridPane hgap="20.0" maxHeight="175.0" maxWidth="390.0" minHeight="175.0" minWidth="390.0" prefHeight="175.0" prefWidth="390.0" vgap="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+					<columnConstraints>
+						<ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="194.0" />
+						<ColumnConstraints hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="191.0" />
+					</columnConstraints>
+					<rowConstraints>
+                  <RowConstraints maxHeight="13.0" minHeight="5.0" prefHeight="13.0" vgrow="SOMETIMES" />
+						<RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+						<RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+						<RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+						<RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+					</rowConstraints>
+					<children>
+						<Button mnemonicParsing="false" text="Contacts List" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                     <stylesheets>
+                        <URL value="@../css/global/button.css" />
+                        <URL value="@../css/dashboard.css" />
+                     </stylesheets></Button>
+						<Button mnemonicParsing="false" prefWidth="152.0" text="Add New Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <stylesheets>
+                        <URL value="@../css/global/button.css" />
+                        <URL value="@../css/dashboard.css" />
+                     </stylesheets></Button>
+						<Button mnemonicParsing="false" text="Delete Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <stylesheets>
+                        <URL value="@../css/global/button.css" />
+                        <URL value="@../css/dashboard.css" />
+                     </stylesheets></Button>
+						<Button mnemonicParsing="false" text="Settings" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                     <stylesheets>
+                        <URL value="@../css/global/button.css" />
+                        <URL value="@../css/dashboard.css" />
+                     </stylesheets></Button>
+					</children>
+				</GridPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <children>
+                  <AnchorPane maxHeight="260.0" maxWidth="219.0" minHeight="260.0" minWidth="219.0" prefHeight="260.0" prefWidth="219.0" stylesheets="@../css/global/topBox.css">
+                     <children>
+                        <Group fx:id="analogueClock" layoutX="97.0" layoutY="104.0">
+                           <children>
+                              <Label alignment="CENTER" layoutX="-89.0" layoutY="126.0" maxWidth="200.0" prefWidth="200.0" stylesheets="@../css/global/label.css" text="13 July, 2018 Friday">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Circle fill="#697a7a" layoutX="12.0" layoutY="5.0" radius="108.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Circle fx:id="face" centerX="100.0" centerY="100.0" fill="WHITE" layoutX="-88.0" layoutY="-95.0" radius="100.0" stroke="#212b21" strokeType="INSIDE" strokeWidth="2.0" />
+                              <Label fx:id="brand" alignment="CENTER" layoutX="-20.0" layoutY="34.0" prefHeight="20.0" prefWidth="60.0" text="krHasan">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                              <Line fx:id="hourHand" endY="-50.0" layoutX="10.0" layoutY="6.0" strokeWidth="3.0" />
+                              <Line fx:id="minuteHand" endY="-75.0" layoutX="10.0" layoutY="6.0" strokeWidth="2.0" />
+                              <Line fx:id="secondHand" endY="-88.0" layoutX="10.0" layoutY="6.0" />
+                              <Circle fx:id="spindlespindle" centerX="100.0" centerY="100.0" fill="#020407" layoutX="-90.0" layoutY="-94.0" radius="5.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutY="-89.0" text="12">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="4.0" layoutY="81.0" text="6">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="94.0" layoutY="-3.0" text="3">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="-80.0" layoutY="-3.0" text="9">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="-70.0" layoutY="36.0" text="8" />
+                              <Label layoutX="-39.0" layoutY="68.0" text="7" />
+                              <Label layoutX="49.0" layoutY="69.0" text="5" />
+                              <Label layoutX="81.0" layoutY="39.0" text="4" />
+                              <Label layoutX="84.0" layoutY="-45.0" text="2" />
+                              <Label layoutX="52.0" layoutY="-78.0" text="1" />
+                              <Label layoutX="-40.0" layoutY="-76.0" text="11" />
+                              <Label layoutX="-70.0" layoutY="-46.0" text="10" />
+                           </children>
+                        </Group>
+                     </children>
+                     <padding>
+                        <Insets left="-1.0" />
+                     </padding>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+			</children>
+		</GridPane>
+	</center>
+</BorderPane>
