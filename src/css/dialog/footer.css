@@ -1,5 +1,4 @@
 .button {
-	-fx-background-color: #57936F;
 	-fx-text-fill: #fdfdfd;
 	-fx-min-width: 90px;
 	-fx-min-height: 28px;
@@ -9,7 +8,24 @@
 	-fx-font-weight: 500;
 }
 
-.button:hover {
+.btn-ok {
+	-fx-background-color: #57936F;
+	-fx-graphic: url("/images/btn-ok.png");
+	-fx-alignment: baseline-left;
+}
+
+.btn-ok:hover {
 	-fx-background-color: #447357;
-	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 3px, 8px);
+	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 3px, 8px);	
+}
+
+.btn-cancel {
+	-fx-background-color: #9f0000;
+	-fx-graphic: url("/images/btn-cancel.png");
+	-fx-alignment: baseline-left;
+}
+
+.btn-cancel:hover {
+	-fx-background-color: #770000;
+	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 3px, 8px);	
 }

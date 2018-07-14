@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import controller.dialog.ConfirmDialogController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -11,8 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.SignInModal;
+import operation.GetDialog;
 import operation.GetScence;
 
 public class SignInController extends SignInModal {
@@ -38,6 +42,8 @@ public class SignInController extends SignInModal {
 
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
+	GetDialog getDialog = new GetDialog();
+	ConfirmDialogController confirmController = new ConfirmDialogController();
 
 	/////////////////////////////////// GeneralCode////////////////////////////////
 	@FXML
@@ -53,7 +59,7 @@ public class SignInController extends SignInModal {
 		
 	}
 
-	private Map<String, Object> getStage() {
+	private Map<String, Object> thisStageInfo() {
 		Map<String, Object> map = new HashMap<>();
 		Stage stage = (Stage) btnSignIn.getScene().getWindow();
 		Scene scene = (Scene) btnSignIn.getScene();
@@ -77,7 +83,7 @@ public class SignInController extends SignInModal {
 	@FXML
 	private void btnSignIn(ActionEvent event) throws IOException {
 		if (signIn(txtUsername.getText(), txtPassword.getText())) {
-			getWindow.dashboard(getStage());
+			getWindow.dashboard(thisStageInfo());
 		} else {
 			lblWarning.setText("Username or Password is Wrong");
 			txtPassword.clear();
@@ -91,12 +97,14 @@ public class SignInController extends SignInModal {
 	
 	
 	@FXML
-	private void lblForgotPassword(ActionEvent e) {
+	private void lblForgotPassword(MouseEvent e) {
 		
+		getDialog.confirmDialog(thisStageInfo());
+		((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
 	}
 	
 	@FXML
-	private void lblNewUser(ActionEvent e) {
+	private void lblNewUser(MouseEvent e) {
 		
 	}
 	

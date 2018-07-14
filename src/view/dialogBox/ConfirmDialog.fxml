@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="550.0" stylesheets="@../../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="550.0" stylesheets="@../../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dialog.ConfirmDialogController">
    <top>
-      <VBox prefHeight="45.0" prefWidth="100.0" styleClass="background" stylesheets="@../../css/dialog/header.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="40.0" prefWidth="100.0" styleClass="background" stylesheets="@../../css/dialog/header.css" BorderPane.alignment="CENTER">
          <children>
-            <GridPane prefHeight="45.0">
+            <GridPane prefHeight="40.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -22,7 +22,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Confirm Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="dialogHeader" text="Confirm Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>
@@ -39,7 +39,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" stylesheets="@../../css/dialog/footer.css" text="OK" GridPane.halignment="CENTER" GridPane.valignment="BASELINE" />
+                  <Button fx:id="btnOK" mnemonicParsing="false" onAction="#btnOK" styleClass="btn-ok" stylesheets="@../../css/dialog/footer.css" text=" OK" GridPane.halignment="CENTER" GridPane.valignment="BASELINE" />
                </children>
             </GridPane>
          </children>
@@ -63,7 +63,7 @@
                   <Image url="@../../images/confirm.png" />
                </image>
             </ImageView>
-            <Label alignment="BOTTOM_LEFT" stylesheets="@../../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label fx:id="content" alignment="BOTTOM_LEFT" stylesheets="@../../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
          
       </GridPane>

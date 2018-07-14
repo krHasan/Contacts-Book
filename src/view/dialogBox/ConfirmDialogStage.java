@@ -6,14 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class InputDialog extends Application {
+public class ConfirmDialogStage extends Application {
 
 	@Override
 	public void start(Stage stage) throws Exception {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("InputDialog.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("ConfirmDialog.fxml"));
 			Scene scene = new Scene(root);
-			stage.setTitle("Input Dialog");
+			stage.setTitle("Confirm Dialog");
 			stage.setScene(scene);
 			stage.setResizable(false);
 			stage.show();

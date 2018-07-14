@@ -8,5 +8,16 @@
 	-fx-max-height: 28px;
 	-fx-font-size: 20px;
 	-fx-text-fill: #fefefe;
-	-fx-font-family: 'Comic Sans MS', sans-serif;
+	-fx-font-family: 'Roboto', sans-serif;
+}
+
+.warning-background {
+	-fx-background-color: #ffcc00;
+}
+.warning-label {
+	-fx-text-fill: #333;
+}
+
+.error-background {
+	-fx-background-color: #cc3300;
 }

@@ -12,9 +12,9 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="550.0" stylesheets="@../../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <VBox prefHeight="45.0" prefWidth="100.0" styleClass="background" stylesheets="@../../css/dialog/header.css" BorderPane.alignment="CENTER">
+      <VBox prefHeight="40.0" prefWidth="100.0" styleClass="warning-background" stylesheets="@../../css/dialog/header.css" BorderPane.alignment="CENTER">
          <children>
-            <GridPane prefHeight="45.0">
+            <GridPane prefHeight="40.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -22,7 +22,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Warning Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label styleClass="warning-label" text="Warning Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>
@@ -39,7 +39,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" stylesheets="@../../css/dialog/footer.css" text="OK" GridPane.halignment="CENTER" GridPane.valignment="BASELINE" />
+                  <Button mnemonicParsing="false" styleClass="btn-ok" stylesheets="@../../css/dialog/footer.css" text=" OK" GridPane.halignment="CENTER" GridPane.valignment="BASELINE" />
                </children>
             </GridPane>
          </children>
@@ -60,7 +60,7 @@
          <children>
             <ImageView fitHeight="56.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@../../images/warning.png" />
+                  <Image url="@../../images/warning2.png" />
                </image>
             </ImageView>
             <Label alignment="BOTTOM_LEFT" stylesheets="@../../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
