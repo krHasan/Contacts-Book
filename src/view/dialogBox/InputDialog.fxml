@@ -22,7 +22,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Information Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Input Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>
@@ -39,31 +39,32 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" stylesheets="@../../css/dialog/footer.css" text="OK" GridPane.halignment="CENTER" GridPane.valignment="BASELINE" />
+                  <Button mnemonicParsing="false" stylesheets="@../../css/dialog/footer.css" text="OK" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>
       </VBox>
    </bottom>
    <center>
-      <GridPane hgap="5.0" BorderPane.alignment="CENTER">
+      <GridPane hgap="5.0" vgap="5.0" BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="79.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="505.0" minWidth="10.0" prefWidth="438.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="23.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="83.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="505.0" minWidth="10.0" prefWidth="172.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="268.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="488.0" minWidth="10.0" prefWidth="51.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="12.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="68.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="34.0" minHeight="8.0" prefHeight="9.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="56.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+            <ImageView fitHeight="56.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER">
                <image>
-                  <Image url="@../../images/info.png" />
+                  <Image url="@../../images/confirm.png" />
                </image>
             </ImageView>
-            <Label alignment="BOTTOM_LEFT" stylesheets="@../../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label alignment="BOTTOM_LEFT" stylesheets="@../../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="CENTER" />
          </children>
          
       </GridPane>

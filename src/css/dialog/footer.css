@@ -1,10 +1,10 @@
 .button {
 	-fx-background-color: #57936F;
 	-fx-text-fill: #fdfdfd;
-	-fx-min-width: 100px;
-	-fx-min-height: 32px;
-	-fx-pref-height: 32px;
-	-fx-max-height: 32px;
+	-fx-min-width: 90px;
+	-fx-min-height: 28px;
+	-fx-pref-height: 28px;
+	-fx-max-height: 28px;
 	-fx-font-size: 14px;
 	-fx-font-weight: 500;
 }
