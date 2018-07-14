@@ -12,7 +12,7 @@ public class ForgotPasswordStage extends Application {
 	public void start(Stage forgotPasswordStage) throws Exception {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ForgotPassword.fxml"));
-			Scene scene = new Scene(root, 800, 600);
+			Scene scene = new Scene(root);
 			forgotPasswordStage.setTitle("Forgot Password");
 			forgotPasswordStage.setScene(scene);
 			forgotPasswordStage.show();

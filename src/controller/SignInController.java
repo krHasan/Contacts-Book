@@ -1,35 +1,103 @@
 package controller;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import model.SignInModal;
+import operation.GetScence;
 
-public class SignInController {
+public class SignInController extends SignInModal {
+
+	/////////////////////////////////// ObjectsDeclaration////////////////////////////////
 	@FXML
-	private GridPane gridPane;
+	private TextField txtUsername;
+
+	@FXML
+	private PasswordField txtPassword;
+
+	@FXML
+	private Button btnSignIn;
+
+	@FXML
+	private Label lblForgotPassword;
+
+	@FXML
+	private Label lblNewUser;
+
+	@FXML
+	private Label lblWarning;
+
+	/////////////////////////////////// GlobalVariables////////////////////////////////
+	GetScence getWindow = new GetScence();
+
+	/////////////////////////////////// GeneralCode////////////////////////////////
+	@FXML
+	public void initialize() {
+		
+		if (!isDBConnected()) {
+			lblWarning.setText("Database not found");
+			lblNewUser.setDisable(true);
+			allNodesDown();
+		} else if (!isUserPresent()) {
+			allNodesDown();
+		}
+		
+	}
+
+	private Map<String, Object> getStage() {
+		Map<String, Object> map = new HashMap<>();
+		Stage stage = (Stage) btnSignIn.getScene().getWindow();
+		Scene scene = (Scene) btnSignIn.getScene();
+		double height = scene.getHeight(), width = scene.getWidth();
+		map.put("stage", stage);
+		map.put("height", height);
+		map.put("width", width);
+
+		return map;
+	}
+
+	private void allNodesDown() {
+		txtUsername.setDisable(true);
+		txtPassword.setDisable(true);
+		btnSignIn.setDisable(true);
+		lblForgotPassword.setDisable(true);
+	}
+	//////////////////////////////////////////// MainCode////////////////////////////////////////////
+	// --------------------------------------------------------------------------------------------//
+
+	@FXML
+	private void btnSignIn(ActionEvent event) throws IOException {
+		if (signIn(txtUsername.getText(), txtPassword.getText())) {
+			getWindow.dashboard(getStage());
+		} else {
+			lblWarning.setText("Username or Password is Wrong");
+			txtPassword.clear();
+		}
+	}
+
+	@FXML
+	private void warningLblStates() {
+		lblWarning.setText(null);
+	}
+	
 	
 	@FXML
-	private TextField username;
+	private void lblForgotPassword(ActionEvent e) {
+		
+	}
 	
 	@FXML
-	private PasswordField password;
-	
-	@FXML
-	private Button signIn;
-	
-	@FXML
-	private Label forgotPassword;
-	
-	@FXML
-	private Label newUser;
-	
-	@FXML
-	private Label warning;
-	
-	
-	
+	private void lblNewUser(ActionEvent e) {
+		
+	}
 	
 }

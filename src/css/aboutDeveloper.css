@@ -1,13 +1,9 @@
 .label {
 	-fx-font-family: 'Comic Sans MS', sans-serif;	
 }
-.heading {
-	-fx-font-size: 26px;
-	-fx-font-weight: bold;
-}
 
 .label-name {
-	-fx-font-size: 16px;
+	-fx-font-size: 26px;
 	-fx-font-weight: bold;
 }
 

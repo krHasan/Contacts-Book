@@ -12,7 +12,7 @@ public class RegistrationStage extends Application {
 	public void start(Stage registrationStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
-			Scene scene = new Scene(root, 800, 600);
+			Scene scene = new Scene(root);
 			registrationStage.setTitle("User Registration");
 			registrationStage.setScene(scene);
 			registrationStage.show();

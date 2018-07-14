@@ -11,7 +11,7 @@ public class ContactsListStage extends Application {
 	public void start(Stage contactsListStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("ContactsList.fxml"));
-			Scene scene = new Scene(root,800,600);
+			Scene scene = new Scene(root);
 			contactsListStage.setTitle("Contacts List");
 			contactsListStage.setScene(scene);
 			contactsListStage.show();

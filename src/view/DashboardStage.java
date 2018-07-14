@@ -12,7 +12,7 @@ public class DashboardStage extends Application {
 	public void start(Stage dashboardStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Dashboard.fxml"));
-			Scene scene = new Scene(root, 800, 600);
+			Scene scene = new Scene(root);
 			dashboardStage.setTitle("Dashboard");
 			dashboardStage.setScene(scene);
 			dashboardStage.show();

@@ -12,7 +12,7 @@ public class SignInStage extends Application {
 	public void start(Stage signInStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-			Scene scene = new Scene(root,800,600);
+			Scene scene = new Scene(root, 800, 600);
 			signInStage.setTitle("Welcome to Fashion World");
 			signInStage.setScene(scene);
 			signInStage.show();

@@ -6,12 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class DeleteContact extends Application {
+public class DeleteContactStage extends Application {
 	@Override
 	public void start(Stage deleteContactStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("DeleteContact.fxml"));
-			Scene scene = new Scene(root,800,600);
+			Scene scene = new Scene(root);
 			deleteContactStage.setTitle("Delete Contacts");
 			deleteContactStage.setScene(scene);
 			deleteContactStage.show();

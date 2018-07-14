@@ -11,7 +11,7 @@ public class EditContactStage extends Application {
 	public void start(Stage editContactStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("EditContact.fxml"));
-			Scene scene = new Scene(root,800,600);
+			Scene scene = new Scene(root);
 			editContactStage.setTitle("Edit Contact");
 			editContactStage.setScene(scene);
 			editContactStage.show();

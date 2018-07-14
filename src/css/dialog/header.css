@@ -1,0 +1,12 @@
+.background {
+	-fx-background-color: #1E4147;
+}
+
+.label {
+	-fx-min-height: 28px;
+	-fx-pref-height: 28px;
+	-fx-max-height: 28px;
+	-fx-font-size: 20px;
+	-fx-text-fill: #fefefe;
+	-fx-font-family: 'Comic Sans MS', sans-serif;
+}

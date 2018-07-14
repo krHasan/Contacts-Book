@@ -11,7 +11,7 @@ public class AboutDeveloperStage extends Application {
 	public void start(Stage aboutDeveloperStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("AboutDeveloper.fxml"));
-			Scene scene = new Scene(root,800,600);
+			Scene scene = new Scene(root);
 			aboutDeveloperStage.setTitle("About Developer");
 			aboutDeveloperStage.setScene(scene);
 			aboutDeveloperStage.show();
