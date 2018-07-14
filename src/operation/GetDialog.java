@@ -31,5 +31,85 @@ public class GetDialog {
 			e.printStackTrace();
 		}
 	}
+	
+	public void errorDialog(Map<String, Object> map) {
+		try {
+			Stage parentStage = (Stage) map.get("stage");
+			parentStage.getScene().getRoot().setEffect(new BoxBlur());
+			
+			Stage stage = new Stage(StageStyle.UNDECORATED);
+			Parent root = FXMLLoader.load(getClass().getResource("/view/dialogBox/ErrorDialog.fxml"));
+			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.initOwner(parentStage);
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setX(parentStage.getX() + ((parentStage.getWidth() - 550)/2));
+			stage.setY(parentStage.getY() + ((parentStage.getHeight() - 180)/2));
+			stage.showAndWait();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void infoDialog(Map<String, Object> map) {
+		try {
+			Stage parentStage = (Stage) map.get("stage");
+			parentStage.getScene().getRoot().setEffect(new BoxBlur());
+			
+			Stage stage = new Stage(StageStyle.UNDECORATED);
+			Parent root = FXMLLoader.load(getClass().getResource("/view/dialogBox/InfoDialog.fxml"));
+			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.initOwner(parentStage);
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setX(parentStage.getX() + ((parentStage.getWidth() - 550)/2));
+			stage.setY(parentStage.getY() + ((parentStage.getHeight() - 180)/2));
+			stage.showAndWait();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void inputDialog(Map<String, Object> map) {
+		try {
+			Stage parentStage = (Stage) map.get("stage");
+			parentStage.getScene().getRoot().setEffect(new BoxBlur());
+			
+			Stage stage = new Stage(StageStyle.UNDECORATED);
+			Parent root = FXMLLoader.load(getClass().getResource("/view/dialogBox/InputDialog.fxml"));
+			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.initOwner(parentStage);
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setX(parentStage.getX() + ((parentStage.getWidth() - 550)/2));
+			stage.setY(parentStage.getY() + ((parentStage.getHeight() - 180)/2));
+			stage.showAndWait();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void warningDialog(Map<String, Object> map) {
+		try {
+			Stage parentStage = (Stage) map.get("stage");
+			parentStage.getScene().getRoot().setEffect(new BoxBlur());
+			
+			Stage stage = new Stage(StageStyle.UNDECORATED);
+			Parent root = FXMLLoader.load(getClass().getResource("/view/dialogBox/WarningDialog.fxml"));
+			
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			stage.initOwner(parentStage);
+			stage.initModality(Modality.APPLICATION_MODAL);
+			stage.setX(parentStage.getX() + ((parentStage.getWidth() - 550)/2));
+			stage.setY(parentStage.getY() + ((parentStage.getHeight() - 180)/2));
+			stage.showAndWait();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

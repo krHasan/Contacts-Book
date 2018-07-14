@@ -46,4 +46,64 @@ public class Credentials extends DatabaseConnection {
 		}
 	}
 
+	public String getSecurityQuestion() {
+		String sql = "SELECT question FROM Credentials";
+		String question = "No Question Found";
+		// create connection and get the security question.
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+			question = result.getString("question");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return question;
+	}
+
+	public String getSecurityAnswer() {
+		String sql = "SELECT answer FROM Credentials";
+		String question = "No Answer Found";
+		// create connection and get the security question answer.
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+			question = result.getString("answer");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return question;
+	}
+
+	public String getUsername() {
+		String sql = "SELECT username FROM Credentials";
+		String question = "No Username Found";
+		// create connection and get the security question answer.
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+			question = result.getString("username");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return question;
+	}
+
+	public String getPassword() {
+		String sql = "SELECT password FROM Credentials";
+		String question = "No Password Found";
+		// create connection and get the security question answer.
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+			question = result.getString("password");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return question;
+	}
+
 }

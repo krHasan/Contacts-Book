@@ -123,7 +123,7 @@ public class GetScence {
 
 	public void forgotPassword(Map<String, Object> map) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("ForgotPassword.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/ForgotPassword.fxml"));
 			double height = (double) map.get("height"), width = (double) map.get("width");
 			Stage stage = (Stage) map.get("stage");
 			Scene scene = new Scene(root, width, height);
@@ -137,7 +137,7 @@ public class GetScence {
 
 	public void registration(Map<String, Object> map) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("Registration.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/Registration.fxml"));
 			double height = (double) map.get("height"), width = (double) map.get("width");
 			Stage stage = (Stage) map.get("stage");
 			Scene scene = new Scene(root, width, height);

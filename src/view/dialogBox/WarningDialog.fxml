@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="550.0" stylesheets="@../../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="550.0" stylesheets="@../../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.dialog.WarningDialogController">
    <top>
       <VBox prefHeight="40.0" prefWidth="100.0" styleClass="warning-background" stylesheets="@../../css/dialog/header.css" BorderPane.alignment="CENTER">
          <children>
@@ -22,7 +23,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label styleClass="warning-label" text="Warning Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="dialogHeader" focusTraversable="false" styleClass="warning-label" text="Warning Dialog" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>
@@ -31,15 +32,24 @@
    <bottom>
       <VBox prefHeight="40.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane prefHeight="40.0">
+            <GridPane hgap="50.0" prefHeight="40.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="415.0" minWidth="10.0" prefWidth="262.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="287.0" minWidth="10.0" prefWidth="258.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button mnemonicParsing="false" styleClass="btn-ok" stylesheets="@../../css/dialog/footer.css" text=" OK" GridPane.halignment="CENTER" GridPane.valignment="BASELINE" />
+                  <Button fx:id="btnOK" mnemonicParsing="false" onAction="#btnOK" styleClass="btn-ok" stylesheets="@../../css/dialog/footer.css" text=" OK" GridPane.halignment="RIGHT" GridPane.valignment="BASELINE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="btnCancel" defaultButton="true" mnemonicParsing="false" onAction="#btnCancel" styleClass="btn-cancel" stylesheets="@../../css/dialog/footer.css" text=" Cancel" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </GridPane>
          </children>
@@ -63,7 +73,7 @@
                   <Image url="@../../images/warning2.png" />
                </image>
             </ImageView>
-            <Label alignment="BOTTOM_LEFT" stylesheets="@../../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Label fx:id="content" alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../../css/global/label.css" text="Username" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
          </children>
          
       </GridPane>

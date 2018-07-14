@@ -20,8 +20,8 @@ public class ConfirmDialogController {
 
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	public boolean btnOKpressed = false;
-	public String headerText = "Confirm Dialog";
-	public String contentText = "This is a confirmation request";
+	public static String headerText = "Confirm Dialog";
+	public static String contentText = "This is a confirmation request";
 
 	/////////////////////////////////// GeneralCodes////////////////////////////////
 	@FXML
