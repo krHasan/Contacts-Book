@@ -45,7 +45,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button fx:id="btnCancel" defaultButton="true" mnemonicParsing="false" onAction="#btnCancel" styleClass="btn-cancel" stylesheets="@../../css/dialog/footer.css" text=" Cancel" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancel" styleClass="btn-cancel" stylesheets="@../../css/dialog/footer.css" text=" Cancel" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

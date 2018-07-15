@@ -22,16 +22,16 @@
          <children>
             <AnchorPane prefHeight="120.0" prefWidth="800.0">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="12.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="12.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/logo.png" />
                      </image>
                      <cursor>
-                        <Cursor fx:constant="WAIT" />
+                        <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Label id="heading" layoutX="228.0" layoutY="10.0" stylesheets="@../css/signIn.css" text="Fashion World" />
-                  <Label id="subtitle" layoutX="291.0" layoutY="66.0" stylesheets="@../css/signIn.css" text="Contact Manager" textFill="#fffdfd">
+                  <Label id="heading" focusTraversable="false" layoutX="228.0" layoutY="10.0" stylesheets="@../css/signIn.css" text="Fashion World" />
+                  <Label id="subtitle" focusTraversable="false" layoutX="291.0" layoutY="66.0" stylesheets="@../css/signIn.css" text="Contact Manager" textFill="#fffdfd">
                      <font>
                         <Font name="Purisa" size="24.0" />
                      </font></Label>
@@ -65,15 +65,15 @@
             <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <Label alignment="BOTTOM_LEFT" focusTraversable="false" styleClass="lbl" stylesheets="@../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
             <TextField fx:id="txtUsername" onKeyReleased="#warningLblStates" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label alignment="BOTTOM_LEFT" styleClass="lbl" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <Label alignment="BOTTOM_LEFT" focusTraversable="false" styleClass="lbl" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <PasswordField fx:id="txtPassword" onKeyReleased="#warningLblStates" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="lblForgotPassword" alignment="CENTER" onMouseClicked="#lblForgotPassword" prefWidth="120.0" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="Forgot Password" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+            <Label fx:id="lblForgotPassword" alignment="CENTER" focusTraversable="false" onMouseClicked="#lblForgotPassword" prefWidth="120.0" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="Forgot Password" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Label>
-            <Label fx:id="lblNewUser" alignment="CENTER" onMouseClicked="#lblNewUser" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="New User" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+            <Label fx:id="lblNewUser" alignment="CENTER" focusTraversable="false" onMouseClicked="#lblNewUser" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="New User" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Label>

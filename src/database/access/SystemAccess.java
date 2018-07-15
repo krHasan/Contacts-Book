@@ -1,4 +1,4 @@
-package databaseAccess;
+package database.access;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

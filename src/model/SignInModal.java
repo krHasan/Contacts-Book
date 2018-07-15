@@ -1,6 +1,6 @@
 package model;
 
-import databaseAccess.Credentials;
+import database.access.Credentials;
 
 public class SignInModal extends Credentials {
 

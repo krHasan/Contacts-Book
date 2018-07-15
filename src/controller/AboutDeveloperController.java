@@ -20,7 +20,7 @@ public class AboutDeveloperController {
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
 
-	private Map<String, Object> getStage() {
+	private Map<String, Object> thisStageInfo() {
 		Map<String, Object> map = new HashMap<>();
 		Stage stage = (Stage) lblDeveloperName.getScene().getWindow();
 		Scene scene = (Scene) lblDeveloperName.getScene();
@@ -36,37 +36,37 @@ public class AboutDeveloperController {
 	// -----------------------------------------------------------------------------------------------//
 	@FXML
 	private void mnuDashboard(ActionEvent event) {
-		getWindow.dashboard(getStage());
+		getWindow.dashboard(thisStageInfo());
 	}
 
 	@FXML
 	private void mnuAddNewContact(ActionEvent event) {
-		getWindow.addNewContact(getStage());
+		getWindow.addNewContact(thisStageInfo());
 	}
 
 	@FXML
 	private void mnuContactsList(ActionEvent event) {
-		getWindow.contactsList(getStage());
+		getWindow.contactsList(thisStageInfo());
 	}
 
 	@FXML
 	private void mnuDeleteContact(ActionEvent event) {
-		getWindow.deleteContact(getStage());
+		getWindow.deleteContact(thisStageInfo());
 	}
 
 	@FXML
 	private void mnuSignOut(ActionEvent event) {
-		getWindow.signIn(getStage());
+		getWindow.signIn(thisStageInfo());
 	}
 
 	@FXML
 	private void mnuSystemSettings(ActionEvent event) {
-		getWindow.systemSettings(getStage());
+		getWindow.systemSettings(thisStageInfo());
 	}
 
 	@FXML
 	private void mnAboutDeveloper(ActionEvent event) {
-		getWindow.aboutDeveloper(getStage());
+		getWindow.aboutDeveloper(thisStageInfo());
 	}
 
 	//////////////////////////////////////////// MainCodes////////////////////////////////////////////

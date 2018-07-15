@@ -128,8 +128,8 @@ public class SignInController extends SignInModal {
 			// show and wait
 			getDialog.warningDialog(thisStageInfo());
 			((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
-			
-			//user wants to delete existing user's data
+
+			// user wants to delete existing user's data
 			if (WarningDialogController.btnOKpressed) {
 
 				InputDialogController.headerText = "Confirm Username";
@@ -137,11 +137,11 @@ public class SignInController extends SignInModal {
 				// show and wait
 				getDialog.inputDialog(thisStageInfo());
 				((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
-				
-				//given username and pressed OK
+
+				// given username and pressed OK
 				if (InputDialogController.btnOKpressed) {
-					
-					//username is right
+
+					// username is right
 					if (isUsernameIsRight(InputDialogController.answer)) {
 
 						InputDialogController.headerText = "Confirm Password";
@@ -149,11 +149,11 @@ public class SignInController extends SignInModal {
 						// show and wait
 						getDialog.inputDialog(thisStageInfo());
 						((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
-						
-						//given password and pressed OK
+
+						// given password and pressed OK
 						if (InputDialogController.btnOKpressed) {
-							
-							//password is right
+
+							// password is right
 							if (isPasswordIsRight(InputDialogController.answer)) {
 
 								InputDialogController.headerText = "Answer The Question";
@@ -162,16 +162,17 @@ public class SignInController extends SignInModal {
 								// show and wait
 								getDialog.inputDialog(thisStageInfo());
 								((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
-								
-								//given answer and pressed OK
+
+								// given answer and pressed OK
 								if (InputDialogController.btnOKpressed) {
-									
-									//answer is right
+
+									// answer is right
 									if (isSecurityAnswerIsRight(InputDialogController.answer)) {
 
 										// ToDo: call delete class and delete user data
 										getWindow.signIn(thisStageInfo());
-										
+										// getWindow.registration(thisStageInfo());
+
 									} else { // answer is wrong
 										ErrorDialogController.headerText = "Wrong Answer";
 										ErrorDialogController.contentText = "The answer you have given is wrong";
@@ -181,7 +182,7 @@ public class SignInController extends SignInModal {
 									}
 								}
 
-							} else { //password is wrong
+							} else { // password is wrong
 								ErrorDialogController.headerText = "Wrong Password";
 								ErrorDialogController.contentText = "The password you have given is wrong";
 								// show and wait
@@ -190,7 +191,7 @@ public class SignInController extends SignInModal {
 							}
 						}
 
-					} else { //username is wrong
+					} else { // username is wrong
 						ErrorDialogController.headerText = "Wrong Username";
 						ErrorDialogController.contentText = "The username you have given is wrong";
 						// show and wait
