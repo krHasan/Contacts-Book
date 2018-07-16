@@ -21,3 +21,11 @@
 .error-background {
 	-fx-background-color: #cc3300;
 }
+
+.password-background {
+	-fx-background-color: #ff9966;
+}
+
+.password-label {
+	-fx-text-fill: #333;
+}

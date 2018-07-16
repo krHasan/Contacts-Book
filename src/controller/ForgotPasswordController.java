@@ -162,12 +162,14 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 			if (newPropertyValue) {// when property is focused
 				if (txtPassword.getText().length() >= 2) {
 					passwordOk = true;
+					nodeStates();
 					lblWarningPassword.setText(null);
 				}
 			} else { // when property is out of focused
 				if (txtPassword.getText().length() == 1) {
 					lblWarningPassword.setText("Minimum 2 charecter");
 					passwordOk = false;
+					nodeStates();
 				}
 			}
 		});
@@ -177,22 +179,27 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 				lblWarningPassword.setText("White space is not allowed");
 				txtPassword.clear();
 				passwordOk = false;
+				nodeStates();
 			} else {
 				nodeStates();
 				lblWarningPassword.setText(null);
+				
 				if (!txtReTypePassword.getText().equals("")) {
 
 					if (txtReTypePassword.getText().equals(txtPassword.getText())) {
 						passwordOk = true;
+						nodeStates();
 						lblWarningReTypePassword.setText(null);
 					} else {
 						lblWarningReTypePassword.setText("Password didn't match");
 						passwordOk = false;
+						nodeStates();
 					}
 				}
 			}
 		} else {
 			passwordOk = false;
+			nodeStates();
 		}
 	}
 
@@ -202,17 +209,20 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 			lblWarningReTypePassword.setText("Type Password First");
 			txtReTypePassword.clear();
 			passwordOk = false;
-		} else {
 			nodeStates();
+		} else {
 			passwordOk = false;
+			nodeStates();
 
 			if (txtPassword.getText().length() <= txtReTypePassword.getText().length()) {
 				if (!txtReTypePassword.getText().equals(txtPassword.getText())) {
 					lblWarningReTypePassword.setText("Password didn't match");
 					txtReTypePassword.clear();
 					passwordOk = false;
+					nodeStates();
 				} else {
 					passwordOk = true;
+					nodeStates();
 					lblWarningReTypePassword.setText(null);
 				}
 			}
@@ -225,12 +235,14 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 			if (newPropertyValue) {// when property is focused
 				if (txtAnswer.getText().length() >= 2) {
 					answerOk = true;
+					nodeStates();
 					lblWarningAnswer.setText(null);
 				}
 			} else { // when property is out of focused
 				if (txtAnswer.getText().length() == 1) {
 					lblWarningAnswer.setText("Minimum 2 charecter");
 					answerOk = false;
+					nodeStates();
 				}
 			}
 		});
@@ -240,13 +252,15 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 				lblWarningAnswer.setText("1st letter can't be white space");
 				txtAnswer.clear();
 				answerOk = false;
-			} else {
 				nodeStates();
+			} else {
 				answerOk = true;
+				nodeStates();
 				lblWarningAnswer.setText(null);
 			}
 		} else {
 			answerOk = false;
+			nodeStates();
 		}
 	}
 }

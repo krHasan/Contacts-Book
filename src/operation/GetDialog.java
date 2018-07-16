@@ -52,13 +52,13 @@ public class GetDialog {
 		}
 	}
 	
-	public void infoDialog(Map<String, Object> map) {
+	public void passwordDialog(Map<String, Object> map) {
 		try {
 			Stage parentStage = (Stage) map.get("stage");
 			parentStage.getScene().getRoot().setEffect(new BoxBlur());
 			
 			Stage stage = new Stage(StageStyle.UNDECORATED);
-			Parent root = FXMLLoader.load(getClass().getResource("/view/dialogBox/InfoDialog.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/view/dialogBox/PasswordDialog.fxml"));
 			
 			Scene scene = new Scene(root);
 			stage.setScene(scene);

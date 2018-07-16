@@ -171,12 +171,14 @@ public class RegistrationController extends RegistrationModal {
 			if (newPropertyValue) {// when property is focused
 				if (txtName.getText().length() >= 2) {
 					nameOk = true;
+					nodeStates();
 					lblWarningName.setText(null);
 				}
 			} else { // when property is out of focused
 				if (txtName.getText().length() == 1) {
 					lblWarningName.setText("Minimum 2 charecter");
 					nameOk = false;
+					nodeStates();
 				}
 			}
 		});
@@ -186,13 +188,15 @@ public class RegistrationController extends RegistrationModal {
 				lblWarningName.setText("1st letter can't be white space");
 				txtName.clear();
 				nameOk = false;
-			} else {
 				nodeStates();
+			} else {
 				nameOk = true;
+				nodeStates();
 				lblWarningName.setText(null);
 			}
 		} else {
 			nameOk = false;
+			nodeStates();
 		}
 	}
 
@@ -202,12 +206,14 @@ public class RegistrationController extends RegistrationModal {
 			if (newPropertyValue) {// when property is focused
 				if (txtUsername.getText().length() >= 2) {
 					usernameOk = true;
+					nodeStates();
 					lblWarningUsername.setText(null);
 				}
 			} else { // when property is out of focused
 				if (txtUsername.getText().length() == 1) {
 					lblWarningUsername.setText("Minimum 2 charecter");
 					usernameOk = false;
+					nodeStates();
 				}
 			}
 		});
@@ -217,13 +223,15 @@ public class RegistrationController extends RegistrationModal {
 				lblWarningUsername.setText("White space is not allowed");
 				txtUsername.clear();
 				usernameOk = false;
-			} else {
 				nodeStates();
+			} else {
 				usernameOk = true;
+				nodeStates();
 				lblWarningUsername.setText(null);
 			}
 		} else {
 			usernameOk = false;
+			nodeStates();
 		}
 	}
 
@@ -233,12 +241,14 @@ public class RegistrationController extends RegistrationModal {
 			if (newPropertyValue) {// when property is focused
 				if (txtPassword.getText().length() >= 2) {
 					passwordOk = true;
+					nodeStates();
 					lblWarningPassword.setText(null);
 				}
 			} else { // when property is out of focused
 				if (txtPassword.getText().length() == 1) {
 					lblWarningPassword.setText("Minimum 2 charecter");
 					passwordOk = false;
+					nodeStates();
 				}
 			}
 		});
@@ -247,12 +257,28 @@ public class RegistrationController extends RegistrationModal {
 			if (constrains.isThereWhiteSpace(txtPassword.getText())) {
 				lblWarningPassword.setText("White space is not allowed");
 				txtPassword.clear();
+				passwordOk = false;
+				nodeStates();
 			} else {
 				nodeStates();
 				lblWarningPassword.setText(null);
+				
+				if (!txtReTypePassword.getText().equals("")) {
+
+					if (txtReTypePassword.getText().equals(txtPassword.getText())) {
+						passwordOk = true;
+						nodeStates();
+						lblWarningReTypePassword.setText(null);
+					} else {
+						lblWarningReTypePassword.setText("Password didn't match");
+						passwordOk = false;
+						nodeStates();
+					}
+				}
 			}
 		} else {
 			passwordOk = false;
+			nodeStates();
 		}
 	}
 
@@ -262,17 +288,20 @@ public class RegistrationController extends RegistrationModal {
 			lblWarningReTypePassword.setText("Type Password First");
 			txtReTypePassword.clear();
 			passwordOk = false;
-		} else {
 			nodeStates();
+		} else {
 			passwordOk = false;
+			nodeStates();
 
 			if (txtPassword.getText().length() <= txtReTypePassword.getText().length()) {
 				if (!txtReTypePassword.getText().equals(txtPassword.getText())) {
 					lblWarningReTypePassword.setText("Password didn't match");
 					txtReTypePassword.clear();
 					passwordOk = false;
+					nodeStates();
 				} else {
 					passwordOk = true;
+					nodeStates();
 					lblWarningReTypePassword.setText(null);
 				}
 			}
@@ -285,12 +314,14 @@ public class RegistrationController extends RegistrationModal {
 			if (newPropertyValue) {// when property is focused
 				if (txtAnswer.getText().length() >= 2) {
 					answerOk = true;
+					nodeStates();
 					lblWarningAnswer.setText(null);
 				}
 			} else { // when property is out of focused
 				if (txtAnswer.getText().length() == 1) {
 					lblWarningAnswer.setText("Minimum 2 charecter");
 					answerOk = false;
+					nodeStates();
 				}
 			}
 		});
@@ -300,13 +331,15 @@ public class RegistrationController extends RegistrationModal {
 				lblWarningAnswer.setText("1st letter can't be white space");
 				txtAnswer.clear();
 				answerOk = false;
-			} else {
 				nodeStates();
+			} else {
 				answerOk = true;
+				nodeStates();
 				lblWarningAnswer.setText(null);
 			}
 		} else {
 			answerOk = false;
+			nodeStates();
 		}
 	}
 }

@@ -95,7 +95,7 @@ public class Credentials extends DatabaseConnection {
 	public static String getPassword() {
 		String sql = "SELECT password FROM Credentials";
 		String question = "No Password Found";
-		// create connection and get the security question answer.
+		// create connection and get the password.
 		try (Connection conn = connector();
 				Statement stmt = conn.createStatement();
 				ResultSet result = stmt.executeQuery(sql)) {
@@ -107,7 +107,23 @@ public class Credentials extends DatabaseConnection {
 		return question;
 	}
 
+	public static String getName() {
+		String sql = "SELECT ownerName FROM Credentials";
+		String question = "No owner name Found";
+		// create connection and get the owner name.
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+			question = result.getString("ownerName");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return question;
+	}
+
 	public boolean setUserCredentials(Map<String, String> map) {
+		int value = 0;
 		String sql = "INSERT INTO Credentials (ownerName, username, password, question, answer) \n"
 				+ "VALUES (?,?,?,?,?)";
 
@@ -124,18 +140,44 @@ public class Credentials extends DatabaseConnection {
 			pstmt.setString(4, question);
 			pstmt.setString(5, answer);
 
-			pstmt.executeUpdate();
+			value = pstmt.executeUpdate();
 
-			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		if (value == 1) {
+			return true;
+		} else {
 			return false;
 		}
 	}
 
+	public boolean setName(Map<String, String> map) {
+		int value = 0;
+		String sql = "UPDATE Credentials SET ownerName = ? WHERE username = ?";
+
+		String name = map.get("name");
+		String username = map.get("username");
+
+		// create connection and set the owner name.
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, name);
+			pstmt.setString(2, username);
+			value = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (value == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	// update password, security question if user forgot his password
 	public boolean updateUserCredentials(Map<String, String> map) {
-		String sql = "UPDATE Credentials \n"
-				+ "SET password = ?, question = ?, answer = ? WHERE username = ?";
+		int value = 0;
+		String sql = "UPDATE Credentials SET password = ?, question = ?, answer = ? WHERE username = ?";
 
 		String password = (String) map.get("password");
 		String question = (String) map.get("question");
@@ -148,12 +190,38 @@ public class Credentials extends DatabaseConnection {
 			pstmt.setString(3, answer);
 			pstmt.setString(4, username);
 
-			pstmt.executeUpdate();
+			value = pstmt.executeUpdate();
 
-			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		if (value == 1) {
+			return true;
+		} else {
 			return false;
 		}
 	}
+	
+	public boolean setPassword(Map<String, String> map) {
+		int value = 0;
+		String sql = "UPDATE Credentials SET password = ? WHERE username = ?";
+
+		String name = map.get("password");
+		String username = map.get("username");
+
+		// create connection and set the owner name.
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, name);
+			pstmt.setString(2, username);
+			value = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (value == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

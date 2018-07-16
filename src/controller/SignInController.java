@@ -6,6 +6,7 @@ import java.util.Map;
 
 import controller.dialog.ErrorDialogController;
 import controller.dialog.InputDialogController;
+import controller.dialog.PasswordDialogController;
 import controller.dialog.WarningDialogController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -144,17 +145,15 @@ public class SignInController extends SignInModal {
 					// username is right
 					if (isUsernameIsRight(InputDialogController.answer)) {
 
-						InputDialogController.headerText = "Confirm Password";
-						InputDialogController.contentText = "Type existing user's password";
 						// show and wait
-						getDialog.inputDialog(thisStageInfo());
+						getDialog.passwordDialog(thisStageInfo());
 						((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
 
 						// given password and pressed OK
-						if (InputDialogController.btnOKpressed) {
+						if (PasswordDialogController.btnOKpressed) {
 
 							// password is right
-							if (isPasswordIsRight(InputDialogController.answer)) {
+							if (isPasswordIsRight(PasswordDialogController.answer)) {
 
 								InputDialogController.headerText = "Answer The Question";
 								InputDialogController.contentText = securityQuestion();
