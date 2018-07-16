@@ -3,6 +3,7 @@ package operation;
 import java.util.HashMap;
 import java.util.Map;
 
+import controller.AddNewContactController;
 import controller.ForgotPasswordController;
 import controller.RegistrationController;
 import controller.dialog.WarningDialogController;
@@ -58,40 +59,40 @@ public class GetScence {
 			stage.show();
 
 			// first remove the previous event
-			// stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, Constraints.event);
-			// Map<String, Object> map1 = new HashMap<>();
-			// map1.put("stage", stage);
-			// GetDialog getDialog = new GetDialog();
-			//
+			stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, Constraints.event);
+
+			Map<String, Object> map1 = new HashMap<>();
+			map1.put("stage", stage);
+			GetDialog getDialog = new GetDialog();
+
 			// create a new event
-			// EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
-			// @Override
-			// public void handle(WindowEvent evnt) {
-			// if (RegistrationController.getInvalideted()) {
-			// WarningDialogController.headerText = "Discard Changes?";
-			// WarningDialogController.contentText = "Do you want to leave without
-			// finishing?";
-			// // show and wait
-			// getDialog.warningDialog(map1);
-			// scene.getRoot().setEffect(null);
-			// if (WarningDialogController.btnOKpressed) {
-			// stage.close();
-			// } else {
-			// evnt.consume();
-			// stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, this);
-			// }
-			// } else {
-			// stage.close();
-			// }
-			// }
-			// };
-			// stage.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, event);
+			EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
+				@Override
+				public void handle(WindowEvent evnt) {
+					if (AddNewContactController.getInvalideted()) {
+						WarningDialogController.headerText = "Discard Changes?";
+						WarningDialogController.contentText = "Do you want to leave without finishing?";
+						// show and wait
+						getDialog.warningDialog(map1);
+						scene.getRoot().setEffect(null);
+						if (WarningDialogController.btnOKpressed) {
+							stage.close();
+						} else {
+							evnt.consume();
+							// stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, this);
+						}
+					} else {
+						stage.close();
+					}
+				}
+			};
+			stage.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, event);
 			/*
 			 * send the new event to Constraints class in order to use this in the next
 			 * stage which will remove this first.
 			 */
-			// Constraints.setStageEvent(event);
-			//
+			Constraints.setStageEvent(event);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -117,7 +118,7 @@ public class GetScence {
 			// EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
 			// @Override
 			// public void handle(WindowEvent evnt) {
-			// if (RegistrationController.getInvalideted()) {
+			// if (.getInvalideted()) {
 			// WarningDialogController.headerText = "Discard Changes?";
 			// WarningDialogController.contentText = "Do you want to leave without
 			// finishing?";
@@ -167,7 +168,7 @@ public class GetScence {
 			// EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
 			// @Override
 			// public void handle(WindowEvent evnt) {
-			// if (RegistrationController.getInvalideted()) {
+			// if (.getInvalideted()) {
 			// WarningDialogController.headerText = "Discard Changes?";
 			// WarningDialogController.contentText = "Do you want to leave without
 			// finishing?";
@@ -217,7 +218,7 @@ public class GetScence {
 			// EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
 			// @Override
 			// public void handle(WindowEvent evnt) {
-			// if (RegistrationController.getInvalideted()) {
+			// if (.getInvalideted()) {
 			// WarningDialogController.headerText = "Discard Changes?";
 			// WarningDialogController.contentText = "Do you want to leave without
 			// finishing?";
@@ -267,7 +268,7 @@ public class GetScence {
 			// EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
 			// @Override
 			// public void handle(WindowEvent evnt) {
-			// if (RegistrationController.getInvalideted()) {
+			// if (.getInvalideted()) {
 			// WarningDialogController.headerText = "Discard Changes?";
 			// WarningDialogController.contentText = "Do you want to leave without
 			// finishing?";
@@ -371,6 +372,7 @@ public class GetScence {
 
 			// first remove the previous event
 			stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, Constraints.event);
+
 			Map<String, Object> map1 = new HashMap<>();
 			map1.put("stage", stage);
 			GetDialog getDialog = new GetDialog();
@@ -420,6 +422,7 @@ public class GetScence {
 
 			// first remove the previous event
 			stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, Constraints.event);
+
 			Map<String, Object> map1 = new HashMap<>();
 			map1.put("stage", stage);
 			GetDialog getDialog = new GetDialog();

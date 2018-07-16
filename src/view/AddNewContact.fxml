@@ -19,7 +19,7 @@
    <top>
       <VBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar prefHeight="30.0" prefWidth="800.0" stylesheets="@../css/global/menu.css">
+            <MenuBar focusTraversable="false" prefHeight="30.0" prefWidth="800.0" stylesheets="@../css/global/menu.css">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
@@ -51,7 +51,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="lblHeading" stylesheets="@../css/global/topBoxLabel.css" text="Add New Contact" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="lblHeading" focusTraversable="false" stylesheets="@../css/global/topBoxLabel.css" text="Add New Contact" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                </children>
             </GridPane>
          </children>
@@ -84,26 +84,26 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="11.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label stylesheets="@../css/global/label.css" text="Customer Name" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
-            <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
-            <Label prefHeight="19.0" stylesheets="@../css/global/label.css" text="Contact Number" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
-            <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label stylesheets="@../css/global/label.css" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
-            <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
-            <Label stylesheets="@../css/global/label.css" text="Priority" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
-            <ComboBox styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Button mnemonicParsing="false" prefHeight="26.0" stylesheets="@../css/global/button.css" text="Button" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+            <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Customer Name" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="txtName" onKeyReleased="#txtName" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+            <Label focusTraversable="false" prefHeight="19.0" stylesheets="@../css/global/label.css" text="Contact Number" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="txtNumber1" onKeyReleased="#txtNumber1" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtNumber2" onKeyReleased="#txtNumber2" stylesheets="@../css/global/textField.css" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
+            <TextField fx:id="txtAddress" onKeyReleased="#txtAddress" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+            <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Priority" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
+            <ComboBox fx:id="cmboPriority" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="btn" mnemonicParsing="false" onAction="#btn" prefHeight="26.0" stylesheets="@../css/global/button.css" text="Button" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BASELINE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Label alignment="BOTTOM_CENTER" stylesheets="@../css/global/warningLabel.css" text="Label" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <Label fx:id="lblWarning" alignment="BOTTOM_CENTER" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="Label" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
          </children>
       </GridPane>
    </center>

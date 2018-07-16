@@ -86,6 +86,7 @@ public class SystemSettingsController extends SystemSettingsModal {
 		lblReTypePass.setVisible(false);
 
 		passwordChangeBtnPressed = false;
+		passwordOk = false;
 		btnUpdatePassword.setText("Change Password");
 	}
 
