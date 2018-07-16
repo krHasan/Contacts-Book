@@ -20,7 +20,7 @@ public class ErrorDialogController {
 
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	public static boolean btnOKpressed = false;
-	public static String headerText = "Error Dialog";
+	public static String headerText = "Error!!!!";
 	public static String contentText = "Something is wrong";
 
 	/////////////////////////////////// GeneralCodes////////////////////////////////

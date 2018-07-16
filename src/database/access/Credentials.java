@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Map;
 
 import database.DatabaseConnection;
 
 public class Credentials extends DatabaseConnection {
 
-	public boolean authentication(String username, String password) {
+	public static boolean authentication(String username, String password) {
 		boolean feedback = false;
 		String sql = "SELECT ownerName FROM Credentials WHERE username = ? AND password = ?";
 		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -27,7 +28,7 @@ public class Credentials extends DatabaseConnection {
 		return feedback;
 	}
 
-	public boolean isUserPresent() {
+	public static boolean isUserPresent() {
 		String sql = "SELECT username FROM Credentials";
 		// create connection and get owner name
 		try (Connection conn = connector();
@@ -46,7 +47,7 @@ public class Credentials extends DatabaseConnection {
 		}
 	}
 
-	public String getSecurityQuestion() {
+	public static String getSecurityQuestion() {
 		String sql = "SELECT question FROM Credentials";
 		String question = "No Question Found";
 		// create connection and get the security question.
@@ -61,7 +62,7 @@ public class Credentials extends DatabaseConnection {
 		return question;
 	}
 
-	public String getSecurityAnswer() {
+	public static String getSecurityAnswer() {
 		String sql = "SELECT answer FROM Credentials";
 		String question = "No Answer Found";
 		// create connection and get the security question answer.
@@ -76,7 +77,7 @@ public class Credentials extends DatabaseConnection {
 		return question;
 	}
 
-	public String getUsername() {
+	public static String getUsername() {
 		String sql = "SELECT username FROM Credentials";
 		String question = "No Username Found";
 		// create connection and get the security question answer.
@@ -91,7 +92,7 @@ public class Credentials extends DatabaseConnection {
 		return question;
 	}
 
-	public String getPassword() {
+	public static String getPassword() {
 		String sql = "SELECT password FROM Credentials";
 		String question = "No Password Found";
 		// create connection and get the security question answer.
@@ -106,4 +107,53 @@ public class Credentials extends DatabaseConnection {
 		return question;
 	}
 
+	public boolean setUserCredentials(Map<String, String> map) {
+		String sql = "INSERT INTO Credentials (ownerName, username, password, question, answer) \n"
+				+ "VALUES (?,?,?,?,?)";
+
+		String name = (String) map.get("name");
+		String username = (String) map.get("username");
+		String password = (String) map.get("password");
+		String question = (String) map.get("question");
+		String answer = (String) map.get("answer");
+
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, name);
+			pstmt.setString(2, username);
+			pstmt.setString(3, password);
+			pstmt.setString(4, question);
+			pstmt.setString(5, answer);
+
+			pstmt.executeUpdate();
+
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	public boolean updateUserCredentials(Map<String, String> map) {
+		String sql = "UPDATE Credentials \n"
+				+ "SET password = ?, question = ?, answer = ? WHERE username = ?";
+
+		String password = (String) map.get("password");
+		String question = (String) map.get("question");
+		String answer = (String) map.get("answer");
+		String username = (String) map.get("username");
+
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, password);
+			pstmt.setString(2, question);
+			pstmt.setString(3, answer);
+			pstmt.setString(4, username);
+
+			pstmt.executeUpdate();
+
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

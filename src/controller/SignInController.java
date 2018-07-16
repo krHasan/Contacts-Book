@@ -47,7 +47,7 @@ public class SignInController extends SignInModal {
 
 	/////////////////////////////////// GeneralCode////////////////////////////////
 	@FXML
-	public void initialize() {
+	private void initialize() {
 
 		if (!isDBConnected()) {
 			lblWarning.setText("Database not found");

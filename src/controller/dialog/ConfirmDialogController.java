@@ -18,17 +18,17 @@ public class ConfirmDialogController {
 	@FXML
 	private Button btnOK;
 
-	/////////////////////////////////// GlobalVariables////////////////////////////////
-	public boolean btnOKpressed = false;
-	public static String headerText = "Confirm Dialog";
-	public static String contentText = "This is a confirmation request";
+	 /////////////////////////////////// GlobalVariables////////////////////////////////
+	public static boolean btnOKpressed = false;
+	public static String headerText = "Successful";
+	public static String contentText = "The task has been successful";
 
 	/////////////////////////////////// GeneralCodes////////////////////////////////
 	@FXML
 	private void initialize() {
 		dialogHeader.setText(headerText);
 		content.setText(contentText);
-	}
+	}	
 
 	//////////////////////////////////////////// MainCodes////////////////////////////////////////////
 	// ---------------------------------------------------------------------------------------------//

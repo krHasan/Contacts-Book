@@ -70,11 +70,11 @@
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Retype Password" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Sequrity Question" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="8" GridPane.valignment="BOTTOM" />
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Answer" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="10" GridPane.valignment="BOTTOM" />
-            <Label fx:id="lblWarningName" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="warning" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="lblWarningUsername" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="warning" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="lblWarningPassword" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="warning" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label fx:id="lblWarningReTypePassword" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="warning" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-            <Label fx:id="lblWarningAnswer" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="warning" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Label fx:id="lblWarningName" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" textOverrun="CLIP" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="lblWarningUsername" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="lblWarningPassword" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label fx:id="lblWarningReTypePassword" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label fx:id="lblWarningAnswer" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" GridPane.columnIndex="2" GridPane.rowIndex="11" />
             <Button fx:id="btn" mnemonicParsing="false" onAction="#btn" stylesheets="@../css/global/button.css" text="Button" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="13">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -83,7 +83,7 @@
             <TextField fx:id="txtUsername" onKeyReleased="#txtUsername" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <PasswordField fx:id="txtPassword" onKeyReleased="#txtPassword" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <PasswordField fx:id="txtReTypePassword" onKeyReleased="#txtReTypePassword" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <ComboBox fx:id="cmboQuestion" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="9">
+            <ComboBox fx:id="cmboQuestion" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="9">
                <cursor>
                   <Cursor fx:constant="CLOSED_HAND" />
                </cursor></ComboBox>

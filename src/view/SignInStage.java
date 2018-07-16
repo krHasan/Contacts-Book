@@ -1,11 +1,13 @@
 package view;
-	
+
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import javafx.stage.WindowEvent;
+import system.Constraints;
 
 public class SignInStage extends Application {
 	@Override
@@ -16,11 +18,20 @@ public class SignInStage extends Application {
 			signInStage.setTitle("Welcome to Fashion World");
 			signInStage.setScene(scene);
 			signInStage.show();
-		} catch(Exception e) {
+
+			EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
+				@Override
+				public void handle(WindowEvent event) {
+				}
+			};
+			signInStage.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, event);
+			Constraints.setStageEvent(event);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
 	}

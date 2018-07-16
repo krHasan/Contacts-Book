@@ -3,6 +3,7 @@ package controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import controller.dialog.ErrorDialogController;
 import controller.dialog.WarningDialogController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -63,11 +64,17 @@ public class RegistrationController extends RegistrationModal {
 
 	private boolean nameOk = false, usernameOk = false, passwordOk = false, answerOk = false;
 	private boolean btnOk = false;
+	/*
+	 * invalidated check if part of the node data state has been changed. if changed
+	 * then notify user at the time being cancel the process.
+	 */
 	private static boolean invalidated = false;
+
 	/////////////////////////////////// GeneralCodes////////////////////////////////
 	@FXML
 	private void initialize() {
 		nodeStates();
+		loadQuestion();
 	}
 
 	private Map<String, Object> thisStageInfo() {
@@ -82,26 +89,7 @@ public class RegistrationController extends RegistrationModal {
 		return map;
 	}
 
-	/*
-	 * check if part of the node data state is changed. if changed then notify user
-	 * at the time being cancel the process.
-	 */
-	private boolean invalideted() {
-		if (nameOk && usernameOk && passwordOk && answerOk) {
-			return false;
-		} else if (!nameOk && !usernameOk && !passwordOk && !answerOk) {
-			return false;
-		} else {
-			return true;
-		}
-	}
-
 	private void nodeStates() {
-		lblWarningName.setText(null);
-		lblWarningUsername.setText(null);
-		lblWarningPassword.setText(null);
-		lblWarningReTypePassword.setText(null);
-		lblWarningAnswer.setText(null);
 		if (nameOk && usernameOk && passwordOk && answerOk) {
 			btn.getStyleClass().clear();
 			btn.getStyleClass().add("button");
@@ -116,19 +104,53 @@ public class RegistrationController extends RegistrationModal {
 			invalidated = true;
 		}
 	}
-	
+
 	public static boolean getInvalideted() {
 		return invalidated;
 	}
 
+	private Map<String, String> save() {
+		Map<String, String> map = new HashMap<>();
+		map.put("name", txtName.getText());
+		map.put("username", txtUsername.getText());
+		map.put("password", txtPassword.getText());
+		map.put("question", cmboQuestion.getValue());
+		map.put("answer", txtAnswer.getText());
+
+		return map;
+	}
+
+	private void loadQuestion() {
+		cmboQuestion.setItems(getSecurityQuestionList());
+		cmboQuestion.getSelectionModel().selectFirst();
+	}
 	//////////////////////////////////////////// MainCode////////////////////////////////////////////
 	// --------------------------------------------------------------------------------------------//
 	@FXML
 	private void btn(ActionEvent e) {
 		if (btnOk) {
-			System.out.println("Comming Soon");
+			if (txtName.getText().equals(null)) {
+				lblWarningName.setText("Minimum 2 charecter");
+			} else if (txtUsername.getText().equals(null)) {
+				lblWarningUsername.setText("Minimum 2 charecter");
+			} else if (txtAnswer.getText().equals(null)) {
+				lblWarningAnswer.setText("Minimum 2 charecter");
+			} else {
+				if (setUserCredentials(save())) {
+					// show and wait
+					getDialog.confirmDialog(thisStageInfo());
+					((Scene) btn.getScene()).getRoot().setEffect(null);
+					getWindow.signIn(thisStageInfo());
+				} else {
+					ErrorDialogController.contentText = "Registration unsuccessful";
+					// show and wait
+					getDialog.errorDialog(thisStageInfo());
+					((Scene) btn.getScene()).getRoot().setEffect(null);
+					getWindow.signIn(thisStageInfo());
+				}
+			}
 		} else {
-			if (invalideted()) {
+			if (invalidated) {
 				WarningDialogController.headerText = "Discard Changes?";
 				WarningDialogController.contentText = "Do you want to leave without finishing?";
 				// show and wait
@@ -145,6 +167,20 @@ public class RegistrationController extends RegistrationModal {
 
 	@FXML
 	private void txtName() {
+		txtName.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
+			if (newPropertyValue) {// when property is focused
+				if (txtName.getText().length() >= 2) {
+					nameOk = true;
+					lblWarningName.setText(null);
+				}
+			} else { // when property is out of focused
+				if (txtName.getText().length() == 1) {
+					lblWarningName.setText("Minimum 2 charecter");
+					nameOk = false;
+				}
+			}
+		});
+
 		if (!txtName.getText().equals("")) {
 			if (constrains.isThereWhiteSpace(txtName.getText().substring(0, 1))) {
 				lblWarningName.setText("1st letter can't be white space");
@@ -153,12 +189,29 @@ public class RegistrationController extends RegistrationModal {
 			} else {
 				nodeStates();
 				nameOk = true;
+				lblWarningName.setText(null);
 			}
+		} else {
+			nameOk = false;
 		}
 	}
 
 	@FXML
 	private void txtUsername() {
+		txtUsername.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
+			if (newPropertyValue) {// when property is focused
+				if (txtUsername.getText().length() >= 2) {
+					usernameOk = true;
+					lblWarningUsername.setText(null);
+				}
+			} else { // when property is out of focused
+				if (txtUsername.getText().length() == 1) {
+					lblWarningUsername.setText("Minimum 2 charecter");
+					usernameOk = false;
+				}
+			}
+		});
+
 		if (!txtUsername.getText().equals("")) {
 			if (constrains.isThereWhiteSpace(txtUsername.getText())) {
 				lblWarningUsername.setText("White space is not allowed");
@@ -167,19 +220,39 @@ public class RegistrationController extends RegistrationModal {
 			} else {
 				nodeStates();
 				usernameOk = true;
+				lblWarningUsername.setText(null);
 			}
+		} else {
+			usernameOk = false;
 		}
 	}
 
 	@FXML
 	private void txtPassword() {
+		txtPassword.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
+			if (newPropertyValue) {// when property is focused
+				if (txtPassword.getText().length() >= 2) {
+					passwordOk = true;
+					lblWarningPassword.setText(null);
+				}
+			} else { // when property is out of focused
+				if (txtPassword.getText().length() == 1) {
+					lblWarningPassword.setText("Minimum 2 charecter");
+					passwordOk = false;
+				}
+			}
+		});
+
 		if (!txtPassword.getText().equals("")) {
 			if (constrains.isThereWhiteSpace(txtPassword.getText())) {
 				lblWarningPassword.setText("White space is not allowed");
 				txtPassword.clear();
 			} else {
 				nodeStates();
+				lblWarningPassword.setText(null);
 			}
+		} else {
+			passwordOk = false;
 		}
 	}
 
@@ -200,6 +273,7 @@ public class RegistrationController extends RegistrationModal {
 					passwordOk = false;
 				} else {
 					passwordOk = true;
+					lblWarningReTypePassword.setText(null);
 				}
 			}
 		}
@@ -207,6 +281,20 @@ public class RegistrationController extends RegistrationModal {
 
 	@FXML
 	private void txtAnswer() {
+		txtAnswer.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
+			if (newPropertyValue) {// when property is focused
+				if (txtAnswer.getText().length() >= 2) {
+					answerOk = true;
+					lblWarningAnswer.setText(null);
+				}
+			} else { // when property is out of focused
+				if (txtAnswer.getText().length() == 1) {
+					lblWarningAnswer.setText("Minimum 2 charecter");
+					answerOk = false;
+				}
+			}
+		});
+
 		if (!txtAnswer.getText().equals("")) {
 			if (constrains.isThereWhiteSpace(txtAnswer.getText().substring(0, 1))) {
 				lblWarningAnswer.setText("1st letter can't be white space");
@@ -215,7 +303,10 @@ public class RegistrationController extends RegistrationModal {
 			} else {
 				nodeStates();
 				answerOk = true;
+				lblWarningAnswer.setText(null);
 			}
+		} else {
+			answerOk = false;
 		}
 	}
 }
