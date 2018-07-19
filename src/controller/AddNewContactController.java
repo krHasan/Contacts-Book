@@ -6,7 +6,7 @@ import java.util.Map;
 import controller.dialog.ConfirmDialogController;
 import controller.dialog.ErrorDialogController;
 import controller.dialog.WarningDialogController;
-import javafx.beans.InvalidationListener;
+import enums.Contacts;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 import model.AddNewContactModal;
 import model.AutoComplete;
 import model.General;
-import operation.Enums;
 import operation.GetDialog;
 import operation.GetScence;
 
@@ -67,7 +66,7 @@ public class AddNewContactController extends AddNewContactModal {
 
 	private void initialState() {
 		lblWarning.setText(null);
-		loadQuestion();
+		loadPriority();
 		txtName.clear();
 		txtNumber1.clear();
 		txtNumber2.clear();
@@ -131,7 +130,7 @@ public class AddNewContactController extends AddNewContactModal {
 		return map;
 	}
 
-	private void loadQuestion() {
+	private void loadPriority() {
 		cmboPriority.setItems(priorityList());
 		cmboPriority.getSelectionModel().selectFirst();
 	}
@@ -217,7 +216,7 @@ public class AddNewContactController extends AddNewContactModal {
 
 	@FXML
 	private void txtName() {
-		AutoComplete.autocomplete(txtName, Enums.name);
+		AutoComplete.autocomplete(txtName, Contacts.name);
 		txtName.textProperty().addListener(InvalidationListener -> {
 			nameOk = genModal.textPerform(txtName, lblWarning);
 			nodeStates();
@@ -226,7 +225,7 @@ public class AddNewContactController extends AddNewContactModal {
 
 	@FXML
 	private void txtNumber1() {
-		AutoComplete.autocomplete(txtNumber1, Enums.number);
+		AutoComplete.autocomplete(txtNumber1, Contacts.number);
 		txtNumber1.textProperty().addListener(InvalidationListener -> {
 			number1Ok = genModal.numberPerform(txtNumber1, lblWarning);
 			nodeStates();
@@ -235,7 +234,7 @@ public class AddNewContactController extends AddNewContactModal {
 
 	@FXML
 	private void txtNumber2() {
-		AutoComplete.autocomplete(txtNumber2, Enums.number);
+		AutoComplete.autocomplete(txtNumber2, Contacts.number);
 		txtNumber2.textProperty().addListener(InvalidationListener -> {
 			number2Ok = genModal.numberPerform(txtNumber2, lblWarning);
 			nodeStates();
@@ -244,7 +243,7 @@ public class AddNewContactController extends AddNewContactModal {
 
 	@FXML
 	private void txtAddress() {
-		AutoComplete.autocomplete(txtAddress, Enums.address);
+		AutoComplete.autocomplete(txtAddress, Contacts.address);
 		txtAddress.textProperty().addListener(InvalidationListener -> {
 			addressOk = genModal.textPerform(txtAddress, lblWarning);
 			nodeStates();

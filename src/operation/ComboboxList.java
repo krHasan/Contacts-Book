@@ -13,5 +13,10 @@ public class ComboboxList {
 		String list[] = { "Silver", "Gold", "Platinum", "Special" };
 		return list;
 	}
+	
+	public String[] getPriorityListForAll() {
+		String list[] = { "All", "Silver", "Gold", "Platinum", "Special" };
+		return list;
+	}
 
 }

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import database.access.AutoCompleteData;
+import enums.Contacts;
 import javafx.geometry.Side;
 import javafx.scene.Cursor;
 import javafx.scene.control.ContextMenu;
@@ -15,7 +16,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
-import operation.Enums;
 
 public class AutoComplete {
 
@@ -24,7 +24,7 @@ public class AutoComplete {
 	static AutoCompleteData fromDatabase = new AutoCompleteData();
 
 	// ------------------------MainCode----------------------------
-	public static void autocomplete(TextField txt, Enums name) {
+	public static void autocomplete(TextField txt, Contacts name) {
 
 		String searchLetter = txt.getText();
 		if (searchLetter == null || searchLetter.isEmpty()) {
@@ -49,16 +49,16 @@ public class AutoComplete {
 	}
 
 	@SuppressWarnings("unlikely-arg-type")
-	private static List<String> entries(String searchLetter, Enums name) {
-		if (name.equals(Enums.name)) {
+	private static List<String> entries(String searchLetter, Contacts name) {
+		if (name.equals(Contacts.name)) {
 
 			return AutoCompleteData.name(searchLetter);
 
-		} else if (name.equals(Enums.globalId)) {
+		} else if (name.equals(Contacts.globalId)) {
 
 			return AutoCompleteData.globalid(searchLetter);
 
-		} else if (name.equals(Enums.number)) {
+		} else if (name.equals(Contacts.number)) {
 
 			return AutoCompleteData.number(searchLetter);
 

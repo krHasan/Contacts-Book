@@ -1,0 +1,8 @@
+.lbl-color {
+	-fx-text-fill: #fdfdfd;
+	-fx-font-size: 15px;
+}
+
+.middle {
+	-fx-alignment:center;
+}

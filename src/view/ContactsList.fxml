@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -17,9 +19,9 @@
 
 <BorderPane minHeight="600.0" minWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ContactsListController">
    <top>
-      <VBox prefHeight="130.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="130.0" prefWidth="100.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
          <children>
-            <MenuBar stylesheets="@../css/global/menu.css">
+            <MenuBar focusTraversable="false" stylesheets="@../css/global/menu.css">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
@@ -59,31 +61,53 @@
                   <RowConstraints maxHeight="14.0" minHeight="0.0" prefHeight="3.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="lblPriority" stylesheets="@../css/global/label.css" text="Priority :" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                  <Label stylesheets="@../css/global/label.css" text="Name :" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                  <Label stylesheets="@../css/global/label.css" text="Address :" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
-                  <Label stylesheets="@../css/global/label.css" text="Number :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                  <Label stylesheets="@../css/global/label.css" text="ID :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                  <ComboBox styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
-                  <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <TextField stylesheets="@../css/global/textField.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Label fx:id="lblPriority" focusTraversable="false" styleClass="lbl-color" text="Priority :" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <stylesheets>
+                        <URL value="@../css/global/label.css" />
+                        <URL value="@../css/contactsList.css" />
+                     </stylesheets></Label>
+                  <Label focusTraversable="false" styleClass="lbl-color" text="Name :" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <stylesheets>
+                        <URL value="@../css/global/label.css" />
+                        <URL value="@../css/contactsList.css" />
+                     </stylesheets></Label>
+                  <Label focusTraversable="false" styleClass="lbl-color" text="Address :" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                     <stylesheets>
+                        <URL value="@../css/global/label.css" />
+                        <URL value="@../css/contactsList.css" />
+                     </stylesheets></Label>
+                  <Label focusTraversable="false" styleClass="lbl-color" text="Number :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <stylesheets>
+                        <URL value="@../css/global/label.css" />
+                        <URL value="@../css/contactsList.css" />
+                     </stylesheets></Label>
+                  <Label focusTraversable="false" styleClass="lbl-color" text="ID :" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     <stylesheets>
+                        <URL value="@../css/global/label.css" />
+                        <URL value="@../css/contactsList.css" />
+                     </stylesheets></Label>
+                  <ComboBox fx:id="cmboPriority" onAction="#cmboPriority" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <TextField fx:id="txtName" onKeyReleased="#txtName" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="txtAddress" onKeyReleased="#txtAddress" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtNumber" onKeyReleased="#txtNumber" stylesheets="@../css/global/textField.css" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtId" onKeyReleased="#txtId" stylesheets="@../css/global/textField.css" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>
       </VBox>
    </top>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tbl" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/contactsList.css" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="No" />
-          <TableColumn prefWidth="75.0" text="Name" />
-            <TableColumn prefWidth="75.0" text="ID" />
-            <TableColumn prefWidth="97.0" text="Number 1" />
-            <TableColumn prefWidth="89.0" text="Number 2" />
-            <TableColumn prefWidth="75.0" text="Priority" />
-            <TableColumn prefWidth="82.0" text="Address" />
+          <TableColumn fx:id="tblColNo" minWidth="40.0" prefWidth="40.0" styleClass="middle" text="No" />
+          <TableColumn fx:id="tblColName" minWidth="50.0" prefWidth="219.0" text="Name" />
+            <TableColumn fx:id="tblColId" minWidth="40.0" prefWidth="50.0" styleClass="middle" text="ID" />
+            <TableColumn fx:id="tblColNumber" minWidth="50.0" prefWidth="153.0" text="Number" />
+            <TableColumn fx:id="tblColPriority" minWidth="50.0" prefWidth="88.0" styleClass="middle" text="Priority" />
+            <TableColumn fx:id="tblColAddress" minWidth="50.0" prefWidth="226.0" text="Address" />
         </columns>
       </TableView>
    </center>
