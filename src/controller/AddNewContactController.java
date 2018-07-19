@@ -6,6 +6,7 @@ import java.util.Map;
 import controller.dialog.ConfirmDialogController;
 import controller.dialog.ErrorDialogController;
 import controller.dialog.WarningDialogController;
+import javafx.beans.InvalidationListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -15,9 +16,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.AddNewContactModal;
+import model.AutoComplete;
+import model.General;
+import operation.Enums;
 import operation.GetDialog;
 import operation.GetScence;
-import system.Constraints;
 
 public class AddNewContactController extends AddNewContactModal {
 
@@ -46,7 +49,7 @@ public class AddNewContactController extends AddNewContactModal {
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
 	GetDialog getDialog = new GetDialog();
-	Constraints constrains = new Constraints();
+	General genModal = new General();
 
 	private boolean nameOk = false, number1Ok = false, number2Ok = false, numberOk = false, addressOk = false;
 	private boolean btnOk = false;
@@ -94,6 +97,8 @@ public class AddNewContactController extends AddNewContactModal {
 
 		if (number1Ok || number2Ok) {
 			numberOk = true;
+		} else {
+			numberOk = false;
 		}
 
 		if (nameOk && numberOk && addressOk) {
@@ -212,140 +217,37 @@ public class AddNewContactController extends AddNewContactModal {
 
 	@FXML
 	private void txtName() {
-		txtName.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
-			if (newPropertyValue) {// when property is focused
-				if (txtName.getText().length() >= 2) {
-					nameOk = true;
-					nodeStates();
-					lblWarning.setText(null);
-				}
-			} else { // when property is out of focused
-				if (txtName.getText().length() == 1) {
-					lblWarning.setText("Minimum 2 charecter");
-					nameOk = false;
-					nodeStates();
-				}
-			}
-		});
-
-		if (!txtName.getText().equals("")) {
-			if (constrains.isThereWhiteSpace(txtName.getText().substring(0, 1))) {
-				lblWarning.setText("1st letter can't be white space");
-				txtName.clear();
-				nameOk = false;
-				nodeStates();
-			} else {
-				nameOk = true;
-				nodeStates();
-				lblWarning.setText(null);
-			}
-		} else {
-			nameOk = false;
+		AutoComplete.autocomplete(txtName, Enums.name);
+		txtName.textProperty().addListener(InvalidationListener -> {
+			nameOk = genModal.textPerform(txtName, lblWarning);
 			nodeStates();
-		}
+		});
 	}
 
 	@FXML
 	private void txtNumber1() {
-		txtNumber1.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
-			if (newPropertyValue) {// when property is focused
-				if (txtNumber1.getText().length() >= 11) {
-					number1Ok = true;
-					nodeStates();
-					lblWarning.setText(null);
-				}
-			} else { // when property is out of focused
-				if (txtNumber1.getText().length() >= 1 && txtNumber1.getText().length() < 11) {
-					lblWarning.setText("Minimum 11 charecter");
-					number1Ok = false;
-					nodeStates();
-				}
-			}
-		});
-
-		if (!txtNumber1.getText().equals("")) {
-			if (constrains.isThereWhiteSpace(txtNumber1.getText().substring(0, 1))) {
-				lblWarning.setText("1st letter can't be white space");
-				txtNumber1.clear();
-				number1Ok = false;
-				nodeStates();
-			} else {
-				number1Ok = true;
-				nodeStates();
-				lblWarning.setText(null);
-			}
-		} else {
-			number1Ok = false;
+		AutoComplete.autocomplete(txtNumber1, Enums.number);
+		txtNumber1.textProperty().addListener(InvalidationListener -> {
+			number1Ok = genModal.numberPerform(txtNumber1, lblWarning);
 			nodeStates();
-		}
+		});
 	}
 
 	@FXML
 	private void txtNumber2() {
-		txtNumber2.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
-			if (newPropertyValue) {// when property is focused
-				if (txtNumber2.getText().length() >= 11) {
-					number2Ok = true;
-					nodeStates();
-					lblWarning.setText(null);
-				}
-			} else { // when property is out of focused
-				if (txtNumber2.getText().length() >= 1 && txtNumber2.getText().length() < 11) {
-					lblWarning.setText("Minimum 11 charecter");
-					number2Ok = false;
-					nodeStates();
-				}
-			}
-		});
-
-		if (!txtNumber2.getText().equals("")) {
-			if (constrains.isThereWhiteSpace(txtNumber2.getText().substring(0, 1))) {
-				lblWarning.setText("1st letter can't be white space");
-				txtNumber2.clear();
-				number2Ok = false;
-				nodeStates();
-			} else {
-				number2Ok = true;
-				nodeStates();
-				lblWarning.setText(null);
-			}
-		} else {
-			number2Ok = false;
+		AutoComplete.autocomplete(txtNumber2, Enums.number);
+		txtNumber2.textProperty().addListener(InvalidationListener -> {
+			number2Ok = genModal.numberPerform(txtNumber2, lblWarning);
 			nodeStates();
-		}
+		});
 	}
 
 	@FXML
 	private void txtAddress() {
-		txtAddress.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
-			if (newPropertyValue) {// when property is focused
-				if (txtAddress.getText().length() >= 2) {
-					addressOk = true;
-					nodeStates();
-					lblWarning.setText(null);
-				}
-			} else { // when property is out of focused
-				if (txtAddress.getText().length() == 1) {
-					lblWarning.setText("Minimum 2 charecter");
-					addressOk = false;
-					nodeStates();
-				}
-			}
-		});
-		if (!txtAddress.getText().equals("")) {
-			if (constrains.isThereWhiteSpace(txtAddress.getText().substring(0, 1))) {
-				lblWarning.setText("1st letter can't be white space");
-				txtAddress.clear();
-				addressOk = false;
-				nodeStates();
-			} else {
-				addressOk = true;
-				nodeStates();
-				lblWarning.setText(null);
-			}
-		} else {
-			addressOk = false;
+		AutoComplete.autocomplete(txtAddress, Enums.address);
+		txtAddress.textProperty().addListener(InvalidationListener -> {
+			addressOk = genModal.textPerform(txtAddress, lblWarning);
 			nodeStates();
-		}
+		});
 	}
 }

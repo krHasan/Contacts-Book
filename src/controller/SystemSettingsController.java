@@ -14,10 +14,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.General;
 import model.SystemSettingsModal;
 import operation.GetDialog;
 import operation.GetScence;
-import system.Constraints;
 
 public class SystemSettingsController extends SystemSettingsModal {
 	/////////////////////////////////// Objects////////////////////////////////
@@ -51,7 +51,7 @@ public class SystemSettingsController extends SystemSettingsModal {
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
 	GetDialog getDialog = new GetDialog();
-	Constraints constrains = new Constraints();
+	General genModal = new General();
 
 	private boolean passwordChangeBtnPressed = false;
 	private boolean passwordOk = false;
@@ -229,74 +229,14 @@ public class SystemSettingsController extends SystemSettingsModal {
 
 	@FXML
 	private void txtPassword() {
-		txtPassword.focusedProperty().addListener((arg0, oldPropertyValue, newPropertyValue) -> {
-			if (newPropertyValue) {// when property is focused
-				if (txtPassword.getText().length() >= 2) {
-					passwordOk = true;
-					passwordChangeOkStatus();
-					lblWarningPassword.setText(null);
-				}
-			} else { // when property is out of focused
-				if (txtPassword.getText().length() == 1) {
-					lblWarningPassword.setText("Minimum 2 charecter");
-					passwordOk = false;
-					passwordChangeOkStatus();
-				}
-			}
-		});
-
-		if (!txtPassword.getText().equals("")) {
-			if (constrains.isThereWhiteSpace(txtPassword.getText())) {
-				lblWarningPassword.setText("White space is not allowed");
-				txtPassword.clear();
-				passwordOk = false;
-				passwordChangeOkStatus();
-			} else {
-				passwordChangeOkStatus();
-				lblWarningPassword.setText(null);
-				if (!txtReTypePassword.getText().equals("")) {
-
-					if (txtReTypePassword.getText().equals(txtPassword.getText())) {
-						passwordOk = true;
-						passwordChangeOkStatus();
-						lblWarningReTypePass.setText(null);
-					} else {
-						lblWarningReTypePass.setText("Password didn't match");
-						passwordOk = false;
-						passwordChangeOkStatus();
-					}
-				}
-			}
-		} else {
-			passwordOk = false;
-			passwordChangeOkStatus();
-		}
+		passwordOk = genModal.passwodPerform(txtPassword, lblWarningPassword, txtReTypePassword, lblWarningReTypePass);
+		passwordChangeOkStatus();
 	}
 
 	@FXML
 	private void txtReTypePassword() {
-		if (txtPassword.getText().equals("")) {
-			lblWarningReTypePass.setText("Type Password First");
-			txtReTypePassword.clear();
-			passwordOk = false;
-			passwordChangeOkStatus();
-		} else {
-			passwordOk = false;
-			passwordChangeOkStatus();
-
-			if (txtPassword.getText().length() <= txtReTypePassword.getText().length()) {
-				if (!txtReTypePassword.getText().equals(txtPassword.getText())) {
-					lblWarningReTypePass.setText("Password didn't match");
-					txtReTypePassword.clear();
-					passwordOk = false;
-					passwordChangeOkStatus();
-				} else {
-					passwordOk = true;
-					passwordChangeOkStatus();
-					lblWarningReTypePass.setText(null);
-				}
-			}
-		}
+		passwordOk = genModal.reTypePasswordPerform(txtPassword, txtReTypePassword, lblWarningReTypePass);
+		passwordChangeOkStatus();
 	}
 
 }

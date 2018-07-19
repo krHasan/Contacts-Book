@@ -3,6 +3,7 @@ package system;
 import org.junit.Test;
 
 import junit.framework.Assert;
+import operation.Constraints;
 
 @SuppressWarnings("deprecation")
 public class ConstraintsTest {
