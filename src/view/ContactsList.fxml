@@ -100,7 +100,7 @@
       </VBox>
    </top>
    <center>
-      <TableView fx:id="tbl" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/contactsList.css" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
+      <TableView fx:id="tbl" focusTraversable="false" onMouseClicked="#tblClick" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/contactsList.css" tableMenuButtonVisible="true" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="tblColNo" minWidth="40.0" prefWidth="40.0" styleClass="middle" text="No" />
           <TableColumn fx:id="tblColName" minWidth="50.0" prefWidth="219.0" text="Name" />

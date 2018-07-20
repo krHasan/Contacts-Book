@@ -2,9 +2,12 @@ package database.access;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Map;
 
 import database.DatabaseConnection;
+import operation.Constraints;
 import operation.GlobalID;
 
 public class ContactAccess extends DatabaseConnection {
@@ -13,7 +16,7 @@ public class ContactAccess extends DatabaseConnection {
 		int value = 0;
 		String sql = "INSERT INTO Contacts (globalId, name, number1, number2, address, priority) \n"
 				+ "VALUES (?,?,?,?,?,?)";
-		
+
 		int globalId = GlobalID.getGlobalid();
 		String name = (String) map.get("name");
 		String number1 = (String) map.get("number1");
@@ -39,6 +42,26 @@ public class ContactAccess extends DatabaseConnection {
 		} else {
 			return false;
 		}
+	}
+
+	public static boolean isThisIdData(String data) {
+		boolean feedback = false;
+		String sql = "SELECT globalId FROM Contacts";
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+
+			while (result.next()) {
+				if (Constraints.intToString(result.getInt("globalId")).equals(data)) {
+					feedback = true;
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return feedback;
 	}
 
 }

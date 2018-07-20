@@ -9,6 +9,7 @@ import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import database.DatabaseConnection;
+import operation.Constraints;
 
 public class AutoCompleteData extends DatabaseConnection {
 
@@ -74,7 +75,7 @@ public class AutoCompleteData extends DatabaseConnection {
 				Statement stmt = conn.createStatement();
 				ResultSet result = stmt.executeQuery(sql)) {
 			while (result.next()) {
-				entries.add(result.getString("globalId"));
+				entries.add(Constraints.intToString(result.getInt("globalId")));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

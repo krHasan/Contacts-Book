@@ -1,39 +1,38 @@
 package table;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class ContactsListTable {
 
-	private SimpleIntegerProperty tblColNo;
+	private SimpleStringProperty tblColNo;
 	private SimpleStringProperty tblColName;
-	private SimpleIntegerProperty tblColId;
+	private SimpleStringProperty tblColId;
 	private SimpleStringProperty tblColNum1;
 	private SimpleStringProperty tblColNum2;
 	private SimpleStringProperty tblColPriority;
 	private SimpleStringProperty tblColAddress;
 
-	public ContactsListTable(Integer tblColNo, String tblColName, Integer tblColId, String tblColNum1,
-			String tblColNum2, String tblColPriority, String tblColAddress) {
+	public ContactsListTable(String tblColNo, String tblColName, String tblColId, String tblColNum1, String tblColNum2,
+			String tblColPriority, String tblColAddress) {
 
-		this.tblColNo = new SimpleIntegerProperty(tblColNo);
+		this.tblColNo = new SimpleStringProperty(tblColNo);
 		this.tblColName = new SimpleStringProperty(tblColName);
-		this.tblColId = new SimpleIntegerProperty(tblColId);
+		this.tblColId = new SimpleStringProperty(tblColId);
 		this.tblColNum1 = new SimpleStringProperty(tblColNum1);
 		this.tblColNum2 = new SimpleStringProperty(tblColNum2);
 		this.tblColPriority = new SimpleStringProperty(tblColPriority);
 		this.tblColAddress = new SimpleStringProperty(tblColAddress);
 	}
 
-	public final SimpleIntegerProperty tblColNoProperty() {
+	public final SimpleStringProperty tblColNoProperty() {
 		return this.tblColNo;
 	}
 
-	public final int getTblColNo() {
+	public final String getTblColNo() {
 		return this.tblColNoProperty().get();
 	}
 
-	public final void setTblColNo(final int tblColNo) {
+	public final void setTblColNo(final String tblColNo) {
 		this.tblColNoProperty().set(tblColNo);
 	}
 
@@ -49,15 +48,15 @@ public class ContactsListTable {
 		this.tblColNameProperty().set(tblColName);
 	}
 
-	public final SimpleIntegerProperty tblColIdProperty() {
+	public final SimpleStringProperty tblColIdProperty() {
 		return this.tblColId;
 	}
 
-	public final int getTblColId() {
+	public final String getTblColId() {
 		return this.tblColIdProperty().get();
 	}
 
-	public final void setTblColId(final int tblColId) {
+	public final void setTblColId(final String tblColId) {
 		this.tblColIdProperty().set(tblColId);
 	}
 
