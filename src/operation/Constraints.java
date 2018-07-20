@@ -9,7 +9,7 @@ import javafx.stage.WindowEvent;
 public class Constraints {
 
 	public static EventHandler<WindowEvent> event;
-	private static String idForEditContact = null;
+	private static String idForEditContact = "1";
 
 	public boolean isThereWhiteSpace(String text) {
 		Pattern pattern = Pattern.compile("\\s");
