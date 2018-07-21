@@ -48,7 +48,6 @@ public class AutoComplete {
 		});
 	}
 
-	@SuppressWarnings("unlikely-arg-type")
 	private static List<String> entries(String searchLetter, Contacts name) {
 		if (name.equals(Contacts.name)) {
 

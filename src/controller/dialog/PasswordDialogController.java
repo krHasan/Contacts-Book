@@ -1,5 +1,6 @@
 package controller.dialog;
 
+import database.access.Credentials;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -17,10 +18,10 @@ public class PasswordDialogController {
 
 	@FXML
 	private Button btnOK;
-	
+
 	@FXML
 	private Button btnCancel;
-	
+
 	@FXML
 	private TextField txtAnswer;
 
@@ -30,6 +31,8 @@ public class PasswordDialogController {
 	public static String headerText = "Password Varification";
 	public static String contentText = "Type Your Current Password";
 	public static String answer = "Not Found";
+
+	public static boolean passwordOk = false;
 
 	/////////////////////////////////// GeneralCodes////////////////////////////////
 	@FXML
@@ -45,10 +48,11 @@ public class PasswordDialogController {
 		answer = txtAnswer.getText();
 		btnOKpressed = true;
 		btnCancelPressed = false;
+		passwordOk = isPasswordMatched(answer);
 		Stage stage = (Stage) btnOK.getScene().getWindow();
 		stage.close();
 	}
-	
+
 	@FXML
 	private void btnCancel(ActionEvent e) {
 		btnCancelPressed = true;
@@ -57,5 +61,12 @@ public class PasswordDialogController {
 		stage.close();
 	}
 
-}
+	private boolean isPasswordMatched(String pass) {
+		if (pass.equals(Credentials.getPassword())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
+}
