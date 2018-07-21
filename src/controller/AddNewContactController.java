@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.AddNewContactModal;
 import model.AutoComplete;
@@ -65,7 +66,7 @@ public class AddNewContactController extends AddNewContactModal {
 	}
 
 	private void initialState() {
-		lblWarning.setText(null);
+		lblWarning.setText("");
 		loadPriority();
 		txtName.clear();
 		txtNumber1.clear();
@@ -186,7 +187,7 @@ public class AddNewContactController extends AddNewContactModal {
 	//////////////////////////////////////////// MainCode////////////////////////////////////////////
 	// --------------------------------------------------------------------------------------------//
 	@FXML
-	private void btn(ActionEvent e) {
+	private void btn(MouseEvent e) {
 		if (btnOk) {
 			if (addNewContact(save())) {
 				ConfirmDialogController.contentText = "A new contact successfully added to list.";

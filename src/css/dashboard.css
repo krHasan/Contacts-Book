@@ -1,3 +1,19 @@
 .button {
 	-fx-min-width: 150px;
 }
+
+.lblSilver {
+	-fx-background-color: #C0C0C0;
+}
+
+.lblGold {
+	-fx-background-color: #FFD700;
+}
+
+.lblPlatinum {
+	-fx-background-color: #e5e4e2;
+}
+
+.lblSpecial {
+	-fx-background-color: rgb(78,154,6);
+}

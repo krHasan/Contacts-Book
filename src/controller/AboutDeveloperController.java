@@ -13,9 +13,9 @@ import operation.GetScence;
 
 public class AboutDeveloperController {
 
-	/////////////////////////////////// ObjectsDeclaration////////////////////////////////
+	/////////////////////////////////// Objects////////////////////////////////
 	@FXML
-	Label lblDeveloperName;
+	private Label lblDeveloperName;
 
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
@@ -73,21 +73,20 @@ public class AboutDeveloperController {
 	// ---------------------------------------------------------------------------------------------//
 	@FXML
 	private void hyperlinkLinkedin(ActionEvent event) {
-	    openWebpage("https://www.linkedin.com/in/kr-hasan"); //clicking this link will open Linkedin profile
+		openWebpage("https://www.linkedin.com/in/kr-hasan"); // clicking this link will open Linkedin profile
 	}
-	
-	
+
 	@FXML
 	private void hyperlinkGit(ActionEvent event) {
-	    openWebpage("https://github.com/krHasan"); //clicking this link will open github profile
+		openWebpage("https://github.com/krHasan"); // clicking this link will open github profile
 	}
-	
-//	method for opening the parameter link on user default browser
+
+	// method for opening the parameter link on user default browser
 	private static void openWebpage(String url) {
-	    try {
-	        new ProcessBuilder("x-www-browser", url).start();
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
+		try {
+			new ProcessBuilder("x-www-browser", url).start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

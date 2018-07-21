@@ -2,6 +2,7 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
@@ -14,6 +15,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -25,26 +27,26 @@
 	<top>
 		<VBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
 			<children>
-				<MenuBar stylesheets="@../css/global/menu.css">
+				<MenuBar focusTraversable="false" stylesheets="@../css/global/menu.css">
 					<menus>
 						<Menu mnemonicParsing="false" text="File">
 							<items>
-								<MenuItem id="mnuDashboard" mnemonicParsing="false" onAction="#mnuDashboard" text=" Dashboard" />
-								<MenuItem id="mnuAddNewContact" mnemonicParsing="false" onAction="#mnuAddNewContact" text=" Add New Contact" />
-								<MenuItem id="mnuContactsList" mnemonicParsing="false" onAction="#mnuContactsList" text=" Contacts List" />
-								<MenuItem id="mnuDeleteContact" mnemonicParsing="false" onAction="#mnuDeleteContact" text=" Delete Contact" />
+								<MenuItem mnemonicParsing="false" onAction="#mnuDashboard" styleClass="mnuDashboard" text=" Dashboard" />
+								<MenuItem mnemonicParsing="false" onAction="#mnuAddNewContact" styleClass="mnuAddNewContact" text=" Add New Contact" />
+								<MenuItem mnemonicParsing="false" onAction="#mnuContactsList" styleClass="mnuContactsList" text=" Contacts List" />
+								<MenuItem mnemonicParsing="false" onAction="#mnuDeleteContact" styleClass="mnuDeleteContact" text=" Delete Contact" />
 								<SeparatorMenuItem mnemonicParsing="false" />
-								<MenuItem id="mnuSignOut" mnemonicParsing="false" onAction="#mnuSignOut" text=" Sign Out" />
+								<MenuItem mnemonicParsing="false" onAction="#mnuSignOut" styleClass="mnuSignOut" text=" Sign Out" />
 							</items>
 						</Menu>
 						<Menu mnemonicParsing="false" text="Settings">
 							<items>
-								<MenuItem id="mnuSystemSettings" mnemonicParsing="false" onAction="#mnuSystemSettings" text=" System Settings" />
+								<MenuItem mnemonicParsing="false" onAction="#mnuSystemSettings" styleClass="mnuSystemSettings" text=" System Settings" />
 							</items>
 						</Menu>
 						<Menu mnemonicParsing="false" text="About">
 							<items>
-								<MenuItem id="mnAboutDeveloper" mnemonicParsing="false" onAction="#mnAboutDeveloper" text=" About Developer" />
+								<MenuItem mnemonicParsing="false" onAction="#mnAboutDeveloper" styleClass="mnAboutDeveloper" text=" About Developer" />
 							</items>
 						</Menu>
 					</menus>
@@ -57,7 +59,7 @@
 						<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
 					</rowConstraints>
 					<children>
-						<Label fx:id="lblHeading" stylesheets="@../css/global/topBoxLabel.css" text="Dashboard" GridPane.halignment="CENTER" />
+						<Label fx:id="lblHeading" focusTraversable="false" stylesheets="@../css/global/topBoxLabel.css" text="Dashboard" GridPane.halignment="CENTER" />
 					</children>
 				</GridPane>
 			</children>
@@ -76,7 +78,7 @@
 			<children>
 				<StackPane prefHeight="150.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
 					<children>
-						<PieChart title="Contacts Overview" />
+						<PieChart fx:id="chart" title="Contacts Overview" />
 					</children>
 				</StackPane>
 				<GridPane hgap="20.0" maxHeight="175.0" maxWidth="390.0" minHeight="175.0" minWidth="390.0" prefHeight="175.0" prefWidth="390.0" vgap="10.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
@@ -92,40 +94,62 @@
 						<RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
 					</rowConstraints>
 					<children>
-						<Button mnemonicParsing="false" text="Contacts List" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+						<Button fx:id="btnContactsList" mnemonicParsing="false" onMouseClicked="#btnContactsList" text="Contacts List" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                      <stylesheets>
                         <URL value="@../css/global/button.css" />
                         <URL value="@../css/dashboard.css" />
-                     </stylesheets></Button>
-						<Button mnemonicParsing="false" prefWidth="152.0" text="Add New Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     </stylesheets>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+						<Button fx:id="btnAddNewContact" mnemonicParsing="false" onMouseClicked="#btnAddNewContact" prefWidth="152.0" text="Add New Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <stylesheets>
                         <URL value="@../css/global/button.css" />
                         <URL value="@../css/dashboard.css" />
-                     </stylesheets></Button>
-						<Button mnemonicParsing="false" text="Delete Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                     </stylesheets>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+						<Button fx:id="btnDeleteContacts" mnemonicParsing="false" onMouseClicked="#btnDeleteContacts" text="Delete Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                      <stylesheets>
                         <URL value="@../css/global/button.css" />
                         <URL value="@../css/dashboard.css" />
-                     </stylesheets></Button>
-						<Button mnemonicParsing="false" text="Settings" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                     </stylesheets>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
+						<Button fx:id="btnSettings" mnemonicParsing="false" onMouseClicked="#btnSettings" text="Settings" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                      <stylesheets>
                         <URL value="@../css/global/button.css" />
                         <URL value="@../css/dashboard.css" />
-                     </stylesheets></Button>
+                     </stylesheets>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor></Button>
 					</children>
 				</GridPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <children>
+                  <HBox layoutX="13.0" layoutY="14.0" maxWidth="375.0" minWidth="375.0" prefHeight="40.0" prefWidth="375.0" stylesheets="@../css/dashboard.css">
+                     <children>
+                        <Label fx:id="lblSilver" prefHeight="40.0" styleClass="lblSilver" />
+                        <Label fx:id="lblGold" prefHeight="40.0" styleClass="lblGold" />
+                        <Label fx:id="lblPlatinum" prefHeight="40.0" styleClass="lblPlatinum" />
+                        <Label fx:id="lblSpecial" prefHeight="40.0" styleClass="lblSpecial" />
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                <children>
                   <AnchorPane maxHeight="260.0" maxWidth="219.0" minHeight="260.0" minWidth="219.0" prefHeight="260.0" prefWidth="219.0" stylesheets="@../css/global/topBox.css">
                      <children>
+                        <Label fx:id="digitalClock" alignment="CENTER" focusTraversable="false" layoutX="-35.0" layoutY="230.0" maxWidth="282.0" prefWidth="282.0" stylesheets="@../css/global/label.css" text="13 July, 2018 Friday">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                         <Group fx:id="analogueClock" layoutX="97.0" layoutY="104.0">
                            <children>
-                              <Label alignment="CENTER" layoutX="-89.0" layoutY="126.0" maxWidth="200.0" prefWidth="200.0" stylesheets="@../css/global/label.css" text="13 July, 2018 Friday">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
                               <Circle fill="#697a7a" layoutX="12.0" layoutY="5.0" radius="108.0" stroke="BLACK" strokeType="INSIDE" />
                               <Circle fx:id="face" centerX="100.0" centerY="100.0" fill="WHITE" layoutX="-88.0" layoutY="-95.0" radius="100.0" stroke="#212b21" strokeType="INSIDE" strokeWidth="2.0" />
                               <Label fx:id="brand" alignment="CENTER" layoutX="-20.0" layoutY="34.0" prefHeight="20.0" prefWidth="60.0" text="krHasan">

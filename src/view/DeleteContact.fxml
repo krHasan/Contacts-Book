@@ -22,22 +22,22 @@
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
-                        <MenuItem id="mnuDashboard" mnemonicParsing="false" onAction="#mnuDashboard" text=" Dashboard" />
-                        <MenuItem id="mnuAddNewContact" mnemonicParsing="false" onAction="#mnuAddNewContact" text=" Add New Contact" />
-                        <MenuItem id="mnuContactsList" mnemonicParsing="false" onAction="#mnuContactsList" text=" Contacts List" />
-                        <MenuItem id="mnuDeleteContact" mnemonicParsing="false" onAction="#mnuDeleteContact" text=" Delete Contact" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnuDashboard" styleClass="mnuDashboard" text=" Dashboard" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnuAddNewContact" styleClass="mnuAddNewContact" text=" Add New Contact" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnuContactsList" styleClass="mnuContactsList" text=" Contacts List" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnuDeleteContact" styleClass="mnuDeleteContact" text=" Delete Contact" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                    <MenuItem id="mnuSignOut" mnemonicParsing="false" onAction="#mnuSignOut" text=" Sign Out" />
+                    <MenuItem mnemonicParsing="false" onAction="#mnuSignOut" styleClass="mnuSignOut" text=" Sign Out" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Settings">
                   <items>
-                    <MenuItem id="mnuSystemSettings" mnemonicParsing="false" onAction="#mnuSystemSettings" text="System Settings" />
+                    <MenuItem mnemonicParsing="false" onAction="#mnuSystemSettings" styleClass="mnuSystemSettings" text="System Settings" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="About">
                   <items>
-                    <MenuItem id="mnAboutDeveloper" mnemonicParsing="false" onAction="#mnAboutDeveloper" text=" About Developer" />
+                    <MenuItem mnemonicParsing="false" onAction="#mnAboutDeveloper" styleClass="mnAboutDeveloper" text=" About Developer" />
                   </items>
                 </Menu>
               </menus>
@@ -64,11 +64,11 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#btnDelete" stylesheets="@../css/global/button.css" text="Delete" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onMouseClicked="#btnDelete" stylesheets="@../css/global/button.css" text="Delete" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                            <cursor>
                               <Cursor fx:constant="OPEN_HAND" />
                            </cursor></Button>
-                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#btnCancel" styleClass="btn-cancel" stylesheets="@../css/global/button.css" text=" Cancel" GridPane.columnIndex="1">
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onMouseClicked="#btnCancel" styleClass="btn-cancel" stylesheets="@../css/global/button.css" text=" Cancel" GridPane.columnIndex="1">
                            <cursor>
                               <Cursor fx:constant="OPEN_HAND" />
                            </cursor>

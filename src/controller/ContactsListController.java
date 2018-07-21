@@ -264,37 +264,39 @@ public class ContactsListController extends ContactsListModal {
 	@FXML
 	private void tblClick(MouseEvent e) {
 		// get the cell data on which user clicked
-		TablePosition<ContactsListTable, String> pos = tbl.getSelectionModel().getSelectedCells().get(0);
-		int row = pos.getRow();
-		ContactsListTable item = (ContactsListTable) tbl.getItems().get(row);
-		TableColumn<ContactsListTable, String> col = pos.getTableColumn();
-		String data = col.getCellObservableValue(item).getValue();
+		if ((tbl.getSelectionModel().getSelectedCells()).size() == 1) {
+			TablePosition<ContactsListTable, String> pos = tbl.getSelectionModel().getSelectedCells().get(0);
+			int row = pos.getRow();
+			ContactsListTable item = (ContactsListTable) tbl.getItems().get(row);
+			TableColumn<ContactsListTable, String> col = pos.getTableColumn();
+			String data = col.getCellObservableValue(item).getValue();
 
-		// copy data to clip board
-		clipContent.putString(data);
-		clipboard.setContent(clipContent);
+			// copy data to clip board
+			clipContent.putString(data);
+			clipboard.setContent(clipContent);
 
-		// 3 mouse click on id column to go to EditContact Window
-		TablePosition<ContactsListTable, String> firstPos = tbl.getSelectionModel().getSelectedCells().get(0);
-		int dataMatchcount = dataMatch(data);
-		if (clickCount(firstPos.getRow()) == 2) {
+			// 3 mouse click on id column to go to EditContact Window
+			TablePosition<ContactsListTable, String> firstPos = tbl.getSelectionModel().getSelectedCells().get(0);
 
-			// authenticate that user clicked on same cell 3 times
-			if (dataMatchcount == 2) {
-				if (ContactAccess.isThisIdData(data)) {
-					Constraints.setIdForEditContact(data);
-					getWindow.editContact(thisStageInfo());
+			int dataMatchcount = dataMatch(data);
+			if (clickCount(firstPos.getRow()) == 2) {
+
+				// authenticate that user clicked on same cell 3 times
+				if (dataMatchcount == 2) {
+					if (ContactAccess.isThisIdData(data)) {
+						Constraints.setIdForEditContact(data);
+						getWindow.editContact(thisStageInfo());
+					}
+					dataDelivered = true;
+					firstDataStore = null;
+					sameDataCount = 0;
 				}
-				dataDelivered = true;
-				firstDataStore = null;
-				sameDataCount = 0;
+
+				positionDelevered = true;
+				counts = 0;
+				firstRowStore = 0;
 			}
-
-			positionDelevered = true;
-			counts = 0;
-			firstRowStore = 0;
 		}
-
 	}
 
 	// 3 mouse click on id column to go to EditContact Window

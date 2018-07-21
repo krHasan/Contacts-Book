@@ -16,6 +16,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
@@ -154,7 +155,7 @@ public class DeleteContactController extends DeleteContactModal {
 	}
 
 	@FXML
-	private void btnDelete(ActionEvent e) {
+	private void btnDelete(MouseEvent e) {
 		// show and wait
 		getDialog.passwordDialog(thisStageInfo());
 		((Scene) btnDelete.getScene()).getRoot().setEffect(null);
@@ -177,7 +178,7 @@ public class DeleteContactController extends DeleteContactModal {
 	}
 
 	@FXML
-	private void btnCancel(ActionEvent e) {
+	private void btnCancel(MouseEvent e) {
 		getWindow.contactsList(thisStageInfo());
 	}
 

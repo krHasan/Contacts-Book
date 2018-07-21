@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.AutoComplete;
 import model.EditContactModal;
@@ -189,7 +190,7 @@ public class EditContactController extends EditContactModal {
 	//////////////////////////////////////////// MainCode////////////////////////////////////////////
 	// --------------------------------------------------------------------------------------------//
 	@FXML
-	private void btn(ActionEvent e) {
+	private void btn(MouseEvent e) {
 		if (btnOk) {
 			if (updateContact(save(), id)) {
 				ConfirmDialogController.contentText = "Contact has been successfully updated";
@@ -205,7 +206,7 @@ public class EditContactController extends EditContactModal {
 	}
 
 	@FXML
-	private void btnCancel(ActionEvent e) {
+	private void btnCancel(MouseEvent e) {
 		if (invalidated) {
 			WarningDialogController.headerText = "Discard Changes?";
 			WarningDialogController.contentText = "Do you want to leave without finishing?";

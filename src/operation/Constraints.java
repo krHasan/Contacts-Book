@@ -37,5 +37,5 @@ public class Constraints {
 	public static void setIdForEditContact(String idForEditContact) {
 		Constraints.idForEditContact = idForEditContact;
 	}
-	
+
 }
