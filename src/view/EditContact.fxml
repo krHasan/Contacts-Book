@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditContactController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditContactController">
    <top>
       <VBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
          <children>
@@ -90,12 +91,12 @@
           <RowConstraints maxHeight="22.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="lblWarning" alignment="BOTTOM_CENTER" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" text="Label" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+            <Label fx:id="lblWarning" alignment="BOTTOM_CENTER" focusTraversable="false" stylesheets="@../css/global/warningLabel.css" textFill="RED" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
             <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Customer Name" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
             <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Contact Number" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Address" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.valignment="BOTTOM" />
             <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Priority" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
-            <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#btn" stylesheets="@../css/global/button.css" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+            <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#btn" styleClass="btnEditContact" stylesheets="@../css/global/button.css" text="Update" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor></Button>
@@ -104,7 +105,7 @@
             <TextField fx:id="txtNumber2" onKeyReleased="#txtNumber2" stylesheets="@../css/global/textField.css" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <TextField fx:id="txtAddress" onKeyReleased="#txtAddress" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
             <ComboBox fx:id="cmboPriority" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <Button mnemonicParsing="false" onMouseClicked="#btnCancel" styleClass="btn-cancel" stylesheets="@../css/global/button.css" text=" Cancel" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
+            <Button mnemonicParsing="false" onMouseClicked="#btnCancel" styleClass="btn-cancel" stylesheets="@../css/global/button.css" text="Cancel" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
@@ -112,4 +113,8 @@
          </children>
       </GridPane>
    </center>
+   <stylesheets>
+      <URL value="@../css/global/root.css" />
+      <URL value="@../css/editContact.css" />
+   </stylesheets>
 </BorderPane>

@@ -1,0 +1,4 @@
+.btnRegistration {
+	-fx-graphic: url("/images/registration.png");
+	-fx-alignment: baseline-left;
+}

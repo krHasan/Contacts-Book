@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SystemSettingsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SystemSettingsController">
    <bottom>
       <VBox prefHeight="50.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER" />
    </bottom>
@@ -57,14 +58,14 @@
             <Label focusTraversable="false" stylesheets="@../css/global/heading3Label.css" text="Update Your Name" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Username" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Name" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
-            <Button fx:id="btnUpdateName" mnemonicParsing="false" onAction="#btnUpdateName" stylesheets="@../css/global/button.css" text="Update Name" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BASELINE">
+            <Button fx:id="btnUpdateName" mnemonicParsing="false" onAction="#btnUpdateName" styleClass="btnRename" stylesheets="@../css/global/button.css" text="Rename" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BASELINE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
             <Label alignment="BOTTOM_CENTER" focusTraversable="false" stylesheets="@../css/global/heading3Label.css" text="Change Password" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="9" GridPane.valignment="BOTTOM" />
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="11" GridPane.valignment="BOTTOM" />
             <Label fx:id="lblReTypePass" alignment="BOTTOM_LEFT" focusTraversable="false" stylesheets="@../css/global/label.css" text="Retype Password" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="13" GridPane.valignment="BOTTOM" />
-            <Button fx:id="btnUpdatePassword" mnemonicParsing="false" onAction="#btnUpdatePassword" stylesheets="@../css/global/button.css" text="Change Password" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="BASELINE">
+            <Button fx:id="btnUpdatePassword" mnemonicParsing="false" onAction="#btnUpdatePassword" styleClass="btnChangePassword" stylesheets="@../css/global/button.css" text="Change" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="16" GridPane.valignment="BASELINE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -111,4 +112,8 @@
          </children>
       </VBox>
    </top>
+   <stylesheets>
+      <URL value="@../css/global/root.css" />
+      <URL value="@../css/systemSettings.css" />
+   </stylesheets>
 </BorderPane>

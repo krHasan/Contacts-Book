@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -16,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInController">
    <top>
       <HBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
          <children>
@@ -30,8 +32,8 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Label id="heading" focusTraversable="false" layoutX="228.0" layoutY="10.0" stylesheets="@../css/signIn.css" text="Fashion World" />
-                  <Label id="subtitle" focusTraversable="false" layoutX="291.0" layoutY="66.0" stylesheets="@../css/signIn.css" text="Contact Manager" textFill="#fffdfd">
+                  <Label id="heading" focusTraversable="false" layoutX="228.0" layoutY="10.0" text="Fashion World" />
+                  <Label id="subtitle" focusTraversable="false" layoutX="291.0" layoutY="66.0" text="Contact Manager" textFill="#fffdfd">
                      <font>
                         <Font name="Purisa" size="24.0" />
                      </font></Label>
@@ -69,16 +71,24 @@
             <TextField fx:id="txtUsername" onKeyReleased="#warningLblStates" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label alignment="BOTTOM_LEFT" focusTraversable="false" styleClass="lbl" stylesheets="@../css/global/label.css" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
             <PasswordField fx:id="txtPassword" onKeyReleased="#warningLblStates" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label fx:id="lblForgotPassword" alignment="CENTER" focusTraversable="false" onMouseClicked="#lblForgotPassword" prefWidth="120.0" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="Forgot Password" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+            <Label fx:id="lblForgotPassword" alignment="CENTER" focusTraversable="false" onMouseClicked="#lblForgotPassword" prefWidth="120.0" text=" Forgot Password" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Label>
-            <Label fx:id="lblNewUser" alignment="CENTER" focusTraversable="false" onMouseClicked="#lblNewUser" styleClass="lbl-as-button" stylesheets="@../css/signIn.css" text="New User" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+               </cursor>
+               <styleClass>
+                  <String fx:value="lbl-as-button" />
+                  <String fx:value="lbl-as-button-forgotPass" />
+               </styleClass></Label>
+            <Label fx:id="lblNewUser" alignment="CENTER" focusTraversable="false" onMouseClicked="#lblNewUser" text=" New User" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Label>
+               </cursor>
+               <styleClass>
+                  <String fx:value="lbl-as-button" />
+                  <String fx:value="lbl-as-button-newUser" />
+               </styleClass></Label>
             <Label fx:id="lblWarning" alignment="TOP_LEFT" stylesheets="@../css/global/warningLabel.css" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Button fx:id="btnSignIn" minWidth="80.0" mnemonicParsing="false" onAction="#btnSignIn" prefHeight="30.0" stylesheets="@../css/global/button.css" text="Sign In" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+            <Button fx:id="btnSignIn" minWidth="80.0" mnemonicParsing="false" onAction="#btnSignIn" prefHeight="30.0" styleClass="btnSignIn" stylesheets="@../css/global/button.css" text="Sign In" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -90,4 +100,8 @@
    <bottom>
       <HBox prefHeight="50.0" prefWidth="200.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER" />
    </bottom>
+   <stylesheets>
+      <URL value="@../css/global/root.css" />
+      <URL value="@../css/signIn.css" />
+   </stylesheets>
 </BorderPane>

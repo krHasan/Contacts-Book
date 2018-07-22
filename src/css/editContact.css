@@ -1,0 +1,4 @@
+.btnEditContact {
+	-fx-graphic: url("/images/editContact.png");
+	-fx-alignment: baseline-left;
+}

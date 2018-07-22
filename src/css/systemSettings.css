@@ -1,0 +1,14 @@
+.btnRename {
+	-fx-graphic: url("/images/rename.png");
+	-fx-alignment: baseline-left;
+}
+
+.btnUpdate {
+	-fx-graphic: url("/images/update.png");
+	-fx-alignment: baseline-left;
+}
+
+.btnChangePassword {
+	-fx-graphic: url("/images/passwordChange.png");
+	-fx-alignment: baseline-left;
+}

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -23,7 +24,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
 	<top>
 		<VBox prefHeight="120.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
 			<children>
@@ -95,35 +96,19 @@
 						<RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
 					</rowConstraints>
 					<children>
-						<Button fx:id="btnContactsList" mnemonicParsing="false" onMouseClicked="#btnContactsList" text="Contacts List" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
-                     <stylesheets>
-                        <URL value="@../css/global/button.css" />
-                        <URL value="@../css/dashboard.css" />
-                     </stylesheets>
+						<Button fx:id="btnContactsList" mnemonicParsing="false" onMouseClicked="#btnContactsList" styleClass="btnContactsList" text="Contacts List" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor></Button>
-						<Button fx:id="btnAddNewContact" mnemonicParsing="false" onMouseClicked="#btnAddNewContact" prefWidth="152.0" text="Add New Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                     <stylesheets>
-                        <URL value="@../css/global/button.css" />
-                        <URL value="@../css/dashboard.css" />
-                     </stylesheets>
+						<Button fx:id="btnAddNewContact" mnemonicParsing="false" onMouseClicked="#btnAddNewContact" prefWidth="152.0" styleClass="btnAddNewContact" text="Add New Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor></Button>
-						<Button fx:id="btnDeleteContacts" mnemonicParsing="false" onMouseClicked="#btnDeleteContacts" text="Delete Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                     <stylesheets>
-                        <URL value="@../css/global/button.css" />
-                        <URL value="@../css/dashboard.css" />
-                     </stylesheets>
+						<Button fx:id="btnDeleteContacts" mnemonicParsing="false" onMouseClicked="#btnDeleteContacts" styleClass="btnDeleteContact" text="Delete Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor></Button>
-						<Button fx:id="btnSettings" mnemonicParsing="false" onMouseClicked="#btnSettings" text="Settings" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
-                     <stylesheets>
-                        <URL value="@../css/global/button.css" />
-                        <URL value="@../css/dashboard.css" />
-                     </stylesheets>
+						<Button fx:id="btnSettings" mnemonicParsing="false" onMouseClicked="#btnSettings" styleClass="btnSettings" text="Settings" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor></Button>
@@ -192,7 +177,7 @@
                <children>
                   <AnchorPane maxHeight="180.0" maxWidth="390.0" minHeight="180.0" minWidth="390.0" prefHeight="180.0" prefWidth="390.0">
                      <children>
-                        <HBox layoutX="11.0" layoutY="35.0" maxWidth="375.0" minWidth="375.0" prefHeight="40.0" prefWidth="375.0" stylesheets="@../css/dashboard.css">
+                        <HBox layoutX="11.0" layoutY="35.0" maxWidth="375.0" minWidth="375.0" prefHeight="40.0" prefWidth="375.0">
                            <children>
                               <Label fx:id="lblSilver" prefHeight="40.0" styleClass="lblSilver" />
                               <Label fx:id="lblGold" prefHeight="40.0" styleClass="lblGold" />
@@ -200,7 +185,7 @@
                               <Label fx:id="lblSpecial" prefHeight="40.0" styleClass="lblSpecial" />
                            </children>
                         </HBox>
-                        <GridPane layoutX="10.0" layoutY="77.0" prefHeight="65.0" prefWidth="373.0" stylesheets="@../css/dashboard.css" vgap="10.0">
+                        <GridPane layoutX="10.0" layoutY="77.0" prefHeight="65.0" prefWidth="373.0" vgap="10.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -212,10 +197,26 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label styleClass="lblSilverAmount" text="Silver" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE" />
-                              <Label styleClass="lblGoldAmount" text="Gold" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE" />
-                              <Label styleClass="lblPlatinumAmount" text="Platinum" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE" />
-                              <Label styleClass="lblSpecialAmount" text="Special" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE" />
+                              <Label text="Silver" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+                                 <styleClass>
+                                    <String fx:value="lblSilverAmount" />
+                                    <String fx:value="lblMyChart" />
+                                 </styleClass></Label>
+                              <Label text="Gold" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+                                 <styleClass>
+                                    <String fx:value="lblGoldAmount" />
+                                    <String fx:value="lblMyChart" />
+                                 </styleClass></Label>
+                              <Label text="Platinum" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+                                 <styleClass>
+                                    <String fx:value="lblPlatinumAmount" />
+                                    <String fx:value="lblMyChart" />
+                                 </styleClass></Label>
+                              <Label text="Special" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BASELINE">
+                                 <styleClass>
+                                    <String fx:value="lblSpecialAmount" />
+                                    <String fx:value="lblMyChart" />
+                                 </styleClass></Label>
                               <Label fx:id="lblSilverAmount" styleClass="lblSilverAmount" text="Silver" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
                               <Label fx:id="lblGoldAmount" styleClass="lblGoldAmount" text="Silver" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
                               <Label fx:id="lblPlatinumAmount" styleClass="lblPlatinumAmount" text="Silver" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
@@ -229,4 +230,9 @@
 			</children>
 		</GridPane>
 	</center>
+   <stylesheets>
+      <URL value="@../css/global/root.css" />
+      <URL value="@../css/global/button.css" />
+      <URL value="@../css/dashboard.css" />
+   </stylesheets>
 </BorderPane>

@@ -21,6 +21,7 @@ import model.AutoComplete;
 import model.General;
 import operation.GetDialog;
 import operation.GetScence;
+import operation.MenuToWindow;
 
 public class AddNewContactController extends AddNewContactModal {
 
@@ -50,6 +51,7 @@ public class AddNewContactController extends AddNewContactModal {
 	GetScence getWindow = new GetScence();
 	GetDialog getDialog = new GetDialog();
 	General genModal = new General();
+	MenuToWindow mnuToWindow = new MenuToWindow();
 
 	private boolean nameOk = false, number1Ok = false, number2Ok = false, numberOk = false, addressOk = false;
 	private boolean btnOk = false;
@@ -89,6 +91,7 @@ public class AddNewContactController extends AddNewContactModal {
 		map.put("stage", stage);
 		map.put("height", height);
 		map.put("width", width);
+		map.put("scene", scene);
 
 		return map;
 	}
@@ -104,6 +107,7 @@ public class AddNewContactController extends AddNewContactModal {
 		if (nameOk && numberOk && addressOk) {
 			btn.getStyleClass().clear();
 			btn.getStyleClass().add("button");
+			btn.getStyleClass().add("btnAddNewContact");
 			btn.setText("Add Contact");
 			btnOk = true;
 		} else {
@@ -113,6 +117,8 @@ public class AddNewContactController extends AddNewContactModal {
 		}
 		if (nameOk || numberOk || addressOk) {
 			invalidated = true;
+		} else {
+			invalidated = false;
 		}
 	}
 
@@ -140,53 +146,42 @@ public class AddNewContactController extends AddNewContactModal {
 	// -----------------------------------------------------------------------------------------------//
 	@FXML
 	private void mnuDashboard(ActionEvent event) {
-		getWindow.dashboard(thisStageInfo());
+		mnuToWindow.mnuToDashboard(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnuAddNewContact(ActionEvent event) {
-		getWindow.addNewContact(thisStageInfo());
+		mnuToWindow.mnuToAddNewContact(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnuContactsList(ActionEvent event) {
-		getWindow.contactsList(thisStageInfo());
+		mnuToWindow.mnuToContactsList(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnuDeleteContact(ActionEvent event) {
-		getWindow.deleteContact(thisStageInfo());
+		mnuToWindow.mnuToDeleteContact(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnuSignOut(ActionEvent event) {
-		if (invalidated) {
-			WarningDialogController.headerText = "Discard Changes?";
-			WarningDialogController.contentText = "Do you want to leave without finishing?";
-			// show and wait
-			getDialog.warningDialog(thisStageInfo());
-			((Scene) btn.getScene()).getRoot().setEffect(null);
-			if (WarningDialogController.btnOKpressed) {
-				getWindow.signIn(thisStageInfo());
-			}
-		} else {
-			getWindow.signIn(thisStageInfo());
-		}
+		mnuToWindow.mnuToSignOut(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnuSystemSettings(ActionEvent event) {
-		getWindow.systemSettings(thisStageInfo());
+		mnuToWindow.mnuToSystemSettings(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnuBackupAndRestore(ActionEvent event) {
-		getWindow.backupAndRestore(thisStageInfo());
+		mnuToWindow.mnuToBackupAndRestore(invalidated, thisStageInfo());
 	}
 
 	@FXML
 	private void mnAboutDeveloper(ActionEvent event) {
-		getWindow.aboutDeveloper(thisStageInfo());
+		mnuToWindow.mnuAboutDeveloper(invalidated, thisStageInfo());
 	}
 
 	//////////////////////////////////////////// MainCode////////////////////////////////////////////

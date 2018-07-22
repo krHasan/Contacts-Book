@@ -7,10 +7,20 @@
 	-fx-background-radius: 3px;
 }
 
-.lbl-as-button:hover {
+.lbl-as-button-forgotPass:hover {
 	-fx-background-color: #5B6A97;
     -fx-text-fill: #fdfdfd;
   	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 3px, 8px);
+  	-fx-graphic: url("/images/forgotPassword.png");
+  	-fx-pref-width: 160px;
+}
+
+.lbl-as-button-newUser:hover {
+	-fx-background-color: #5B6A97;
+    -fx-text-fill: #fdfdfd;
+  	-fx-effect: dropshadow(two-pass-box, rgba(0, 0, 0, 0.3), 12, 0, 3px, 8px);
+  	-fx-graphic: url("/images/registration.png");
+   	-fx-pref-width: 160px;
 }
 
 
@@ -27,4 +37,9 @@
 	-fx-font-size: 24px;
 	-fx-font-family: 'Purisa', sans-serif;
 	-fx-effect: dropshadow(three-pass-box, #333, 10, 0, 5px, 5px);	
+}
+
+.btnSignIn {
+	-fx-graphic: url("/images/signin.png");
+    -fx-alignment: baseline-left;
 }

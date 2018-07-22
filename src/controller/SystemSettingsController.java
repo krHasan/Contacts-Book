@@ -87,13 +87,14 @@ public class SystemSettingsController extends SystemSettingsModal {
 
 		passwordChangeBtnPressed = false;
 		passwordOk = false;
-		btnUpdatePassword.setText("Change Password");
+		btnUpdatePassword.setText("Change");
 	}
 
 	private void passwordChangeOkStatus() {
 		if (passwordOk) {
 			btnUpdatePassword.getStyleClass().clear();
 			btnUpdatePassword.getStyleClass().add("button");
+			btnUpdatePassword.getStyleClass().add("btnUpdate");
 			btnUpdatePassword.setText("Update");
 		} else {
 			btnUpdatePassword.setText("Cancel");

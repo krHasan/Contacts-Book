@@ -93,6 +93,7 @@ public class RegistrationController extends RegistrationModal {
 		if (nameOk && usernameOk && passwordOk && answerOk) {
 			btn.getStyleClass().clear();
 			btn.getStyleClass().add("button");
+			btn.getStyleClass().add("btnRegistration");
 			btn.setText("Registration");
 			btnOk = true;
 		} else {
@@ -102,6 +103,8 @@ public class RegistrationController extends RegistrationModal {
 		}
 		if (nameOk || usernameOk || passwordOk || answerOk) {
 			invalidated = true;
+		} else {
+			invalidated = false;
 		}
 	}
 

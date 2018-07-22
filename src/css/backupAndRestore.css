@@ -1,0 +1,9 @@
+.btnBackup {
+	-fx-graphic: url("/images/backup.png");
+	-fx-alignment: baseline-left;
+}
+
+.btnRestore {
+	-fx-graphic: url("/images/restore.png");
+	-fx-alignment: baseline-left;
+}

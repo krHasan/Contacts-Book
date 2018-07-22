@@ -1,0 +1,4 @@
+.btnAddNewContact {
+	-fx-graphic: url("/images/addNewContact.png");
+	-fx-alignment: baseline-left;
+}

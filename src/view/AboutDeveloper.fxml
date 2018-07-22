@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/global/root.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutDeveloperController">
+<BorderPane minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutDeveloperController">
    <top>
       <VBox prefHeight="130.0" prefWidth="800.0" styleClass="background" stylesheets="@../css/global/topBox.css" BorderPane.alignment="CENTER">
          <children>
@@ -77,11 +78,15 @@
             <RowConstraints maxHeight="105.0" minHeight="6.0" prefHeight="105.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="lblDeveloperName" focusTraversable="false" styleClass="label-name" stylesheets="@../css/aboutDeveloper.css" text="Khandoker Rakib Hasan" GridPane.halignment="CENTER" />
-            <Label focusTraversable="false" styleClass="label-email" stylesheets="@../css/aboutDeveloper.css" text="hasanbappi@gmail.com" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="lblDeveloperName" focusTraversable="false" styleClass="label-name" text="Khandoker Rakib Hasan" GridPane.halignment="CENTER" />
+            <Label focusTraversable="false" styleClass="label-email" text="hasanbappi@gmail.com" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
             <Hyperlink onAction="#hyperlinkGit" text="https://github.com/krHasan" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Hyperlink onAction="#hyperlinkLinkedin" text="https://www.linkedin.com/in/kr-hasan" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </center>
+   <stylesheets>
+      <URL value="@../css/global/root.css" />
+      <URL value="@../css/aboutDeveloper.css" />
+   </stylesheets>
 </BorderPane>

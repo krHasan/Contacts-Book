@@ -87,7 +87,8 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 		if (passwordOk && answerOk) {
 			btn.getStyleClass().clear();
 			btn.getStyleClass().add("button");
-			btn.setText("Update");
+			btn.getStyleClass().add("btnForgotPassword");
+			btn.setText("Change");
 			btnOk = true;
 		} else {
 			btn.setText("Cancel");
@@ -96,6 +97,8 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 		}
 		if (passwordOk || answerOk) {
 			invalidated = true;
+		} else {
+			invalidated = false;
 		}
 	}
 
