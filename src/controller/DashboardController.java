@@ -22,13 +22,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.Glow;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import model.DashboardModal;
+import operation.Constraints;
 import operation.GetScence;
 
 public class DashboardController extends DashboardModal {
@@ -86,6 +86,18 @@ public class DashboardController extends DashboardModal {
 
 	@FXML
 	private Label lblSpecial;
+
+	@FXML
+	private Label lblSilverAmount;
+
+	@FXML
+	private Label lblGoldAmount;
+
+	@FXML
+	private Label lblPlatinumAmount;
+
+	@FXML
+	private Label lblSpecialAmount;
 
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
@@ -265,35 +277,30 @@ public class DashboardController extends DashboardModal {
 	private static final double boxWidth = 375.00;
 
 	private void loadMyChart() {
-		double silverNumber = 1;
-		double goldNumber = 15;
-		double platinumNumber = 25;
-		double specialNumber = 14;
+		double silverNumber = getSilverContactAmount();
+		lblSilverAmount.setText(Constraints.intToString(getSilverContactAmount()));
+
+		double goldNumber = getGoldContactAmount();
+		lblGoldAmount.setText(Constraints.intToString(getGoldContactAmount()));
+
+		double platinumNumber = getPlatinumContactAmount();
+		lblPlatinumAmount.setText(Constraints.intToString(getPlatinumContactAmount()));
+
+		double specialNumber = getSpecialContactAmount();
+		lblSpecialAmount.setText(Constraints.intToString(getSpecialContactAmount()));
 
 		double total = (silverNumber + goldNumber + platinumNumber + specialNumber);
 
-		double silverWidth = (((silverNumber / total) * 100.00) / 100.00) * boxWidth;
-		double goldWidth = (((goldNumber / total) * 100.00) / 100.00) * boxWidth;
-		double platinumWidth = (((platinumNumber / total) * 100.00) / 100.00) * boxWidth;
-		double specialWidth = (((specialNumber / total) * 100.00) / 100.00) * boxWidth;
+		setlblWidth(lblSilver, (((silverNumber / total) * 100.00) / 100.00) * boxWidth);
+		setlblWidth(lblGold, (((goldNumber / total) * 100.00) / 100.00) * boxWidth);
+		setlblWidth(lblPlatinum, (((platinumNumber / total) * 100.00) / 100.00) * boxWidth);
+		setlblWidth(lblSpecial, (((specialNumber / total) * 100.00) / 100.00) * boxWidth);
+	}
 
-		System.out.println((((silverNumber / total) * 100.00) / 100.00) * boxWidth);
-
-		lblSilver.setMinWidth(silverWidth);
-		lblSilver.setPrefWidth(silverWidth);
-		lblSilver.setMaxWidth(silverWidth);
-
-		lblGold.setMinWidth(goldWidth);
-		lblGold.setPrefWidth(goldWidth);
-		lblGold.setMaxWidth(goldWidth);
-
-		lblPlatinum.setMinWidth(platinumWidth);
-		lblPlatinum.setPrefWidth(platinumWidth);
-		lblPlatinum.setMaxWidth(platinumWidth);
-
-		lblSpecial.setMinWidth(specialWidth);
-		lblSpecial.setPrefWidth(specialWidth);
-		lblSpecial.setMaxWidth(specialWidth);
+	private void setlblWidth(Label lbl, double width) {
+		lbl.setMinWidth(width);
+		lbl.setPrefWidth(width);
+		lbl.setMaxWidth(width);
 	}
 
 }

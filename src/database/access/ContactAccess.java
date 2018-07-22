@@ -164,4 +164,68 @@ public class ContactAccess extends DatabaseConnection {
 			return false;
 		}
 	}
+
+	public int getSilverContactAmount() {
+		String sql = "SELECT priority FROM Contacts WHERE priority = ?";
+		int value = 0;
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, "Silver");
+			ResultSet result = pstmt.executeQuery();
+			while (result.next()) {
+				++value;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return value;
+	}
+
+	public int getGoldContactAmount() {
+		String sql = "SELECT priority FROM Contacts WHERE priority = ?";
+		int value = 0;
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, "Gold");
+			ResultSet result = pstmt.executeQuery();
+			while (result.next()) {
+				++value;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return value;
+	}
+
+	public int getPlatinumContactAmount() {
+		String sql = "SELECT priority FROM Contacts WHERE priority = ?";
+		int value = 0;
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, "Platinum");
+			ResultSet result = pstmt.executeQuery();
+			while (result.next()) {
+				++value;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return value;
+	}
+
+	public int getSpecialContactAmount() {
+		String sql = "SELECT priority FROM Contacts WHERE priority = ?";
+		int value = 0;
+		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, "Special");
+			ResultSet result = pstmt.executeQuery();
+			while (result.next()) {
+				++value;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return value;
+	}
 }

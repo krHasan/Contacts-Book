@@ -2,18 +2,39 @@
 	-fx-min-width: 150px;
 }
 
+.label {
+	-fx-font-weight: bold;
+	-fx-font-family: 'Roboto' sans-serif;
+}
+
 .lblSilver {
-	-fx-background-color: #C0C0C0;
+	-fx-background-color: #E26335;
 }
 
 .lblGold {
-	-fx-background-color: #FFD700;
+	-fx-background-color: #E99E27;
 }
 
 .lblPlatinum {
-	-fx-background-color: #e5e4e2;
+	-fx-background-color: #58AD58;
 }
 
 .lblSpecial {
-	-fx-background-color: rgb(78,154,6);
+	-fx-background-color: #46A3BE;
+}
+
+.lblSilverAmount {
+	-fx-text-fill: #E26335;
+}
+
+.lblGoldAmount {
+	-fx-text-fill: #E99E27;
+}
+
+.lblPlatinumAmount {
+	-fx-text-fill: #58AD58;
+}
+
+.lblSpecialAmount {
+	-fx-text-fill: #46A3BE;
 }
