@@ -180,6 +180,11 @@ public class AddNewContactController extends AddNewContactModal {
 	}
 
 	@FXML
+	private void mnuBackupAndRestore(ActionEvent event) {
+		getWindow.backupAndRestore(thisStageInfo());
+	}
+
+	@FXML
 	private void mnAboutDeveloper(ActionEvent event) {
 		getWindow.aboutDeveloper(thisStageInfo());
 	}

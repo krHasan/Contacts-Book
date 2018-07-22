@@ -8,6 +8,7 @@ import java.util.Map;
 import controller.dialog.ConfirmDialogController;
 import controller.dialog.ErrorDialogController;
 import controller.dialog.PasswordDialogController;
+import database.access.ContactAccess;
 import enums.Contacts;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,11 +22,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model.DeleteContactModal;
 import operation.GetDialog;
 import operation.GetScence;
 
-public class DeleteContactController extends DeleteContactModal {
+public class DeleteContactController extends ContactAccess {
 	/////////////////////////////////// Objects////////////////////////////////
 	@FXML
 	private Label lblHeading;
@@ -101,6 +101,11 @@ public class DeleteContactController extends DeleteContactModal {
 	@FXML
 	private void mnuSystemSettings(ActionEvent event) {
 		getWindow.systemSettings(thisStageInfo());
+	}
+
+	@FXML
+	private void mnuBackupAndRestore(ActionEvent event) {
+		getWindow.backupAndRestore(thisStageInfo());
 	}
 
 	@FXML

@@ -134,6 +134,11 @@ public class SystemSettingsController extends SystemSettingsModal {
 	}
 
 	@FXML
+	private void mnuBackupAndRestore(ActionEvent event) {
+		getWindow.backupAndRestore(thisStageInfo());
+	}
+
+	@FXML
 	private void mnAboutDeveloper(ActionEvent event) {
 		getWindow.aboutDeveloper(thisStageInfo());
 	}

@@ -54,3 +54,7 @@
 .mnAboutDeveloper > .label{
     -fx-graphic: url("/images/aboutDeveloper.png");
 }
+
+.mnuBackupAndRestore > .label {
+	-fx-graphic: url("/images/aboutDeveloper.png");
+}

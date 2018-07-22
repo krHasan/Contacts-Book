@@ -31,6 +31,7 @@
                 <Menu mnemonicParsing="false" text="Settings">
                   <items>
                     <MenuItem mnemonicParsing="false" onAction="#mnuSystemSettings" styleClass="mnuSystemSettings" text=" System Settings" />
+                        <MenuItem mnemonicParsing="false" onAction="#mnuBackupAndRestore" styleClass="mnuBackupAndRestore" text=" Backup And Restore" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="About">

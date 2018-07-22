@@ -155,6 +155,11 @@ public class DashboardController extends DashboardModal {
 	}
 
 	@FXML
+	private void mnuBackupAndRestore(ActionEvent event) {
+		getWindow.backupAndRestore(thisStageInfo());
+	}
+
+	@FXML
 	private void mnAboutDeveloper(ActionEvent event) {
 		getWindow.aboutDeveloper(thisStageInfo());
 	}
@@ -278,16 +283,16 @@ public class DashboardController extends DashboardModal {
 
 	private void loadMyChart() {
 		double silverNumber = getSilverContactAmount();
-		lblSilverAmount.setText(Constraints.intToString(getSilverContactAmount()));
+		lblSilverAmount.setText(Constraints.intToString((int) silverNumber));
 
 		double goldNumber = getGoldContactAmount();
-		lblGoldAmount.setText(Constraints.intToString(getGoldContactAmount()));
+		lblGoldAmount.setText(Constraints.intToString((int) goldNumber));
 
 		double platinumNumber = getPlatinumContactAmount();
-		lblPlatinumAmount.setText(Constraints.intToString(getPlatinumContactAmount()));
+		lblPlatinumAmount.setText(Constraints.intToString((int) platinumNumber));
 
 		double specialNumber = getSpecialContactAmount();
-		lblSpecialAmount.setText(Constraints.intToString(getSpecialContactAmount()));
+		lblSpecialAmount.setText(Constraints.intToString((int) specialNumber));
 
 		double total = (silverNumber + goldNumber + platinumNumber + specialNumber);
 

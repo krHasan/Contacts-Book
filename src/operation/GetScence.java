@@ -97,6 +97,38 @@ public class GetScence {
 			e.printStackTrace();
 		}
 	}
+	
+	public void backupAndRestore(Map<String, Object> map) {
+		try {
+			Parent root = FXMLLoader.load(getClass().getResource("/view/Backup.fxml"));
+			double height = (double) map.get("height"), width = (double) map.get("width");
+			Stage stage = (Stage) map.get("stage");
+			Scene scene = new Scene(root, width, height);
+			stage.setTitle("Data Backup And Restore");
+			stage.setScene(scene);
+			stage.show();
+
+			// first remove the previous event
+			stage.removeEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, Constraints.event);
+
+			// create a blank new event
+			EventHandler<WindowEvent> event = new EventHandler<WindowEvent>() {
+				@Override
+				public void handle(WindowEvent evnt) {
+				}
+			};
+			stage.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, event);
+			/*
+			 * send the new event to Constraints class in order to use this in the next
+			 * stage which will remove this first.
+			 */
+			Constraints.setStageEvent(event);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 
 	public void contactsList(Map<String, Object> map) {
 		try {

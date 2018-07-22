@@ -183,6 +183,11 @@ public class EditContactController extends EditContactModal {
 	}
 
 	@FXML
+	private void mnuBackupAndRestore(ActionEvent event) {
+		getWindow.backupAndRestore(thisStageInfo());
+	}
+
+	@FXML
 	private void mnAboutDeveloper(ActionEvent event) {
 		getWindow.aboutDeveloper(thisStageInfo());
 	}
