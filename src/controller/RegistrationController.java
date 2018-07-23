@@ -3,6 +3,7 @@ package controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import controller.dialog.ConfirmDialogController;
 import controller.dialog.ErrorDialogController;
 import controller.dialog.WarningDialogController;
 import javafx.event.ActionEvent;
@@ -141,6 +142,7 @@ public class RegistrationController extends RegistrationModal {
 				lblWarningAnswer.setText("Minimum 2 charecter");
 			} else {
 				if (setUserCredentials(save())) {
+					ConfirmDialogController.contentText = "Congratulations, Registration Successful";
 					// show and wait
 					getDialog.confirmDialog(thisStageInfo());
 					((Scene) btn.getScene()).getRoot().setEffect(null);

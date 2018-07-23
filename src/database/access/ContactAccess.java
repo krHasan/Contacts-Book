@@ -48,7 +48,7 @@ public class ContactAccess extends DatabaseConnection {
 		}
 	}
 
-	public static boolean isThisIdData(String data) {
+	public static boolean isThisIdDataExists(String data) {
 		boolean feedback = false;
 		String sql = "SELECT globalId FROM Contacts";
 		try (Connection conn = connector();

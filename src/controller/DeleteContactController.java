@@ -172,7 +172,7 @@ public class DeleteContactController extends ContactAccess {
 			// show and wait
 			getDialog.confirmDialog(thisStageInfo());
 			((Scene) btnDelete.getScene()).getRoot().setEffect(null);
-			getWindow.contactsList(thisStageInfo());
+			getWindow.deleteContact(thisStageInfo());
 		} else {
 			ErrorDialogController.headerText = "Wrong Passowrd";
 			ErrorDialogController.contentText = "Password didn't match";

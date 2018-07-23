@@ -190,7 +190,7 @@ public class AddNewContactController extends AddNewContactModal {
 	private void btn(MouseEvent e) {
 		if (btnOk) {
 			if (addNewContact(save())) {
-				ConfirmDialogController.contentText = "A new contact successfully added to list.";
+				ConfirmDialogController.contentText = "A new contact has been successfully added to list.";
 				// show and wait
 				getDialog.confirmDialog(thisStageInfo());
 				((Scene) btn.getScene()).getRoot().setEffect(null);

@@ -95,6 +95,7 @@ public class EditContactController extends EditContactModal {
 		map.put("stage", stage);
 		map.put("height", height);
 		map.put("width", width);
+		map.put("scene", scene);
 
 		return map;
 	}

@@ -1,4 +1,4 @@
-.label {
+.lblaboutDeveloper {
 	-fx-font-family: 'Comic Sans MS', sans-serif;	
 }
 
@@ -8,6 +8,6 @@
 }
 
 .label-email {
-	-fx-font-size: 14px;
+	-fx-font-size: 16px;
 	-fx-font-weight: bold;
 }

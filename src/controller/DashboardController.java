@@ -99,6 +99,9 @@ public class DashboardController extends DashboardModal {
 	@FXML
 	private Label lblSpecialAmount;
 
+	@FXML
+	private Label lblTotalContacts;
+
 	/////////////////////////////////// GlobalVariables////////////////////////////////
 	GetScence getWindow = new GetScence();
 
@@ -189,6 +192,7 @@ public class DashboardController extends DashboardModal {
 	// ------------------------PieChart----------------------------
 	private void loadChart() {
 		chart.setData(getPieData());
+		chart.setStartAngle(-90);
 	}
 
 	// ------------------------ClockCode----------------------------
@@ -278,7 +282,7 @@ public class DashboardController extends DashboardModal {
 	// return sb.toString();
 	// }
 
-	// ------------------------CustomerNumberGraphics----------------------------
+	// ------------------------MyChart----------------------------
 	private static final double boxWidth = 375.00;
 
 	private void loadMyChart() {
@@ -295,6 +299,7 @@ public class DashboardController extends DashboardModal {
 		lblSpecialAmount.setText(Constraints.intToString((int) specialNumber));
 
 		double total = (silverNumber + goldNumber + platinumNumber + specialNumber);
+		lblTotalContacts.setText(Constraints.intToString((int) total));
 
 		setlblWidth(lblSilver, (((silverNumber / total) * 100.00) / 100.00) * boxWidth);
 		setlblWidth(lblGold, (((goldNumber / total) * 100.00) / 100.00) * boxWidth);

@@ -14,8 +14,8 @@ import table.ContactsListTable;
 
 public class TableAccess extends DatabaseConnection {
 
-	public ObservableList<Object> getAllContactsData() {
-		final ObservableList<Object> contactsData = FXCollections.observableArrayList();
+	public ObservableList<ContactsListTable> getAllContactsData() {
+		final ObservableList<ContactsListTable> contactsData = FXCollections.observableArrayList();
 		String sql = "SELECT * FROM Contacts";
 
 		try (Connection conn = connector();
@@ -44,8 +44,8 @@ public class TableAccess extends DatabaseConnection {
 		return contactsData;
 	}
 
-	public ObservableList<Object> getPriorityContactsData(String priority) {
-		final ObservableList<Object> contactsData = FXCollections.observableArrayList();
+	public ObservableList<ContactsListTable> getPriorityContactsData(String priority) {
+		final ObservableList<ContactsListTable> contactsData = FXCollections.observableArrayList();
 		String sql = "SELECT * FROM Contacts WHERE priority = ?";
 
 		try (Connection conn = connector(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -76,8 +76,8 @@ public class TableAccess extends DatabaseConnection {
 	}
 
 	// ------------------------Name----------------------------
-	public ObservableList<Object> getContactsByNameData(String searchLetter) {
-		final ObservableList<Object> contactsData = FXCollections.observableArrayList();
+	public ObservableList<ContactsListTable> getContactsByNameData(String searchLetter) {
+		final ObservableList<ContactsListTable> contactsData = FXCollections.observableArrayList();
 		List<String> listOfNames = AutoCompleteData.name(searchLetter);
 
 		int slNo = 1;
@@ -111,8 +111,8 @@ public class TableAccess extends DatabaseConnection {
 	}
 
 	// ------------------------Address----------------------------
-	public ObservableList<Object> getContactsByAddressData(String searchLetter) {
-		final ObservableList<Object> contactsData = FXCollections.observableArrayList();
+	public ObservableList<ContactsListTable> getContactsByAddressData(String searchLetter) {
+		final ObservableList<ContactsListTable> contactsData = FXCollections.observableArrayList();
 		List<String> listOfAddress = AutoCompleteData.address(searchLetter);
 
 		int slNo = 1;
@@ -145,8 +145,8 @@ public class TableAccess extends DatabaseConnection {
 	}
 
 	// ------------------------Number----------------------------
-	public ObservableList<Object> getContactsByNumberData(String searchLetter) {
-		final ObservableList<Object> contactsData = FXCollections.observableArrayList();
+	public ObservableList<ContactsListTable> getContactsByNumberData(String searchLetter) {
+		final ObservableList<ContactsListTable> contactsData = FXCollections.observableArrayList();
 		List<String> listOfNumber = AutoCompleteData.number(searchLetter);
 
 		int slNo = 1;
@@ -202,8 +202,8 @@ public class TableAccess extends DatabaseConnection {
 	}
 
 	// ------------------------ID----------------------------
-	public ObservableList<Object> getContactsByIdData(String searchLetter) {
-		final ObservableList<Object> contactsData = FXCollections.observableArrayList();
+	public ObservableList<ContactsListTable> getContactsByIdData(String searchLetter) {
+		final ObservableList<ContactsListTable> contactsData = FXCollections.observableArrayList();
 		List<String> listOfIds = AutoCompleteData.globalid(searchLetter);
 
 		int slNo = 1;

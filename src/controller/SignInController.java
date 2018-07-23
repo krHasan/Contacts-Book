@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import model.SignInModal;
 import operation.GetDialog;
 import operation.GetScence;
+import system.DeleteUserCredentials;
 
 public class SignInController extends SignInModal {
 
@@ -168,9 +169,9 @@ public class SignInController extends SignInModal {
 									// answer is right
 									if (isSecurityAnswerIsRight(InputDialogController.answer)) {
 
-										// ToDo: call delete class and delete user data
-										getWindow.signIn(thisStageInfo());
-										// getWindow.registration(thisStageInfo());
+										// call delete class and delete user data
+										new DeleteUserCredentials().deleteAllData();
+										getWindow.registration(thisStageInfo());
 
 									} else { // answer is wrong
 										ErrorDialogController.headerText = "Wrong Answer";

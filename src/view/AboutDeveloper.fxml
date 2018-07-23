@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -78,8 +79,16 @@
             <RowConstraints maxHeight="105.0" minHeight="6.0" prefHeight="105.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label fx:id="lblDeveloperName" focusTraversable="false" styleClass="label-name" text="Khandoker Rakib Hasan" GridPane.halignment="CENTER" />
-            <Label focusTraversable="false" styleClass="label-email" text="hasanbappi@gmail.com" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="lblDeveloperName" focusTraversable="false" text="Khandoker Rakib Hasan" GridPane.halignment="CENTER">
+               <styleClass>
+                  <String fx:value="label-name" />
+                  <String fx:value="lblaboutDeveloper" />
+               </styleClass></Label>
+            <Label focusTraversable="false" text="hasanbappi@gmail.com" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="label-email" />
+                  <String fx:value="lblaboutDeveloper" />
+               </styleClass></Label>
             <Hyperlink onAction="#hyperlinkGit" text="https://github.com/krHasan" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
             <Hyperlink onAction="#hyperlinkLinkedin" text="https://www.linkedin.com/in/kr-hasan" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
          </children>

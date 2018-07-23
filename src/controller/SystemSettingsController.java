@@ -87,6 +87,7 @@ public class SystemSettingsController extends SystemSettingsModal {
 
 		passwordChangeBtnPressed = false;
 		passwordOk = false;
+		btnUpdatePassword.getStyleClass().add("btnChangePassword");
 		btnUpdatePassword.setText("Change");
 	}
 
@@ -177,6 +178,7 @@ public class SystemSettingsController extends SystemSettingsModal {
 					}
 				}
 			} else {
+				ErrorDialogController.headerText = "Wrong Password";
 				ErrorDialogController.contentText = "Password didn't match";
 				// show and wait
 				getDialog.errorDialog(thisStageInfo());
@@ -196,11 +198,11 @@ public class SystemSettingsController extends SystemSettingsModal {
 					map.put("password", txtPassword.getText());
 					map.put("username", txtUsername.getText());
 					if (setPassword(map)) {
+						initialStage();
 						ConfirmDialogController.contentText = "Password changed sucsessfully";
 						// show and wait
 						getDialog.confirmDialog(thisStageInfo());
 						((Scene) btnUpdatePassword.getScene()).getRoot().setEffect(null);
-						initialStage();
 					} else {
 						// show and wait
 						getDialog.errorDialog(thisStageInfo());
@@ -218,12 +220,14 @@ public class SystemSettingsController extends SystemSettingsModal {
 			if (PasswordDialogController.btnOKpressed) {
 				if (isPasswordMatched(PasswordDialogController.answer)) {
 					txtPassword.setEditable(true);
+					txtPassword.clear();
 					txtReTypePassword.setVisible(true);
 					lblReTypePass.setVisible(true);
 					btnUpdatePassword.setText("Cancel");
 					btnUpdatePassword.getStyleClass().add("btn-cancel");
 					passwordChangeBtnPressed = true;
 				} else {
+					ErrorDialogController.headerText = "Wrong Password";
 					ErrorDialogController.contentText = "Password didn't match";
 					// show and wait
 					getDialog.errorDialog(thisStageInfo());

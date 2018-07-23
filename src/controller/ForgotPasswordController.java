@@ -130,7 +130,7 @@ public class ForgotPasswordController extends ForgotPasswordModal {
 				lblWarningAnswer.setText("Minimum 2 charecter");
 			} else {
 				if (updateUserCredentials(save())) {
-					ConfirmDialogController.contentText = "Password successfully updated";
+					ConfirmDialogController.contentText = "Password successfully changeds";
 					// show and wait
 					getDialog.confirmDialog(thisStageInfo());
 					((Scene) btn.getScene()).getRoot().setEffect(null);
