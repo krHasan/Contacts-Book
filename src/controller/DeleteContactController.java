@@ -184,7 +184,7 @@ public class DeleteContactController extends ContactAccess {
 
 	@FXML
 	private void btnCancel(MouseEvent e) {
-		getWindow.contactsList(thisStageInfo());
+		getWindow.dashboard(thisStageInfo());
 	}
 
 }

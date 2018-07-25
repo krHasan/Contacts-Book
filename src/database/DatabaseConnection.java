@@ -6,9 +6,10 @@ import java.sql.SQLException;
 
 import database.access.SystemAccess;
 
-
 public class DatabaseConnection {
 	Connection connection;
+	public final static String dbAddress = "/home/" + System.getProperty("user.name")
+			+ "/.contacts-manager/ContactsList.db";
 
 	public DatabaseConnection() {
 		connection = connector();
@@ -21,20 +22,14 @@ public class DatabaseConnection {
 			Class.forName("org.sqlite.JDBC");
 
 			// for development
-			// String url =
-			// "jdbc:sqlite:/home/"+System.getProperty("user.name")+"/Money-ManagerDB/ContactsList.db";
-			String url = "jdbc:sqlite:ContactsList.db";
+			// String url = "jdbc:sqlite:ContactsList.db";
 
 			// for Linux distribution
-			// String url = "jdbc:sqlite:/home/" + System.getProperty("user.name") +
-			// "/Money-ManagerDB/Money_Manager.db";
+			String url = "jdbc:sqlite:" + dbAddress;
 
 			// for Mac distribution
 			// String url =
-			// "jdbc:sqlite:/Users/"+System.getProperty("user.name")+"/Money-ManagerDB/Money_Manager.db";
-
-			// for Windows distribution
-			// String url = "jdbc:sqlite:Money_Manager.db";
+			// "jdbc:sqlite:/Users/"+System.getProperty("user.name")+"/Money-ManagerDB/ContactsList.db";
 
 			conn = DriverManager.getConnection(url);
 

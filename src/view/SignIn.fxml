@@ -24,7 +24,7 @@
          <children>
             <AnchorPane prefHeight="120.0" prefWidth="800.0">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="12.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="35.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <image>
                         <Image url="@../images/logo.png" />
                      </image>
@@ -32,11 +32,19 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Label id="heading" focusTraversable="false" layoutX="228.0" layoutY="10.0" text="Fashion World" />
-                  <Label id="subtitle" focusTraversable="false" layoutX="291.0" layoutY="66.0" text="Contact Manager" textFill="#fffdfd">
+                  <Label id="heading" alignment="CENTER" focusTraversable="false" layoutY="5.0" text="Contacts Manager" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Label id="subtitle" alignment="CENTER" focusTraversable="false" layoutY="70.0" textFill="#fffdfd" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <font>
                         <Font name="Purisa" size="24.0" />
                      </font></Label>
+                  <ImageView fitHeight="36.0" fitWidth="438.0" layoutX="182.0" layoutY="76.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/subTitle.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </ImageView>
                </children>
             </AnchorPane>
          </children></HBox>

@@ -279,7 +279,7 @@ public class GetScence {
 			double height = (double) map.get("height"), width = (double) map.get("width");
 			Stage stage = (Stage) map.get("stage");
 			Scene scene = new Scene(root, width, height);
-			stage.setTitle("Welcome to Fashion World");
+			stage.setTitle("Welcome to Contacts Manager");
 			stage.setScene(scene);
 			stage.show();
 

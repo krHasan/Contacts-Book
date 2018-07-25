@@ -12,6 +12,7 @@ import java.util.Map;
 
 import controller.dialog.ConfirmDialogController;
 import controller.dialog.ErrorDialogController;
+import database.DatabaseConnection;
 import database.access.BackupAccess;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -115,7 +116,7 @@ public class BackupController extends BackupAccess {
 	@FXML
 	private void btnBackup(MouseEvent event) throws IOException {
 		// data file to backup
-		File sourcefile = new File("ContactsList.db");
+		File sourcefile = new File(DatabaseConnection.dbAddress);
 
 		if (sourcefile.exists()) {
 			// initiate file chooser
@@ -178,7 +179,7 @@ public class BackupController extends BackupAccess {
 
 		if (sourcefile != null) {
 			// restore db file to application folder by default
-			File destFile = new File("ContactsList.db");
+			File destFile = new File(DatabaseConnection.dbAddress);
 			if (!destFile.exists()) {
 				destFile.createNewFile();
 			}
@@ -187,9 +188,9 @@ public class BackupController extends BackupAccess {
 			FileChannel source = null;
 			FileChannel destination = null;
 			try {
-				destination = new FileInputStream(destFile).getChannel();
-				source = new FileOutputStream(sourcefile).getChannel();
-				source.transferFrom(destination, 0, destination.size());
+				source = new FileInputStream(sourcefile).getChannel();
+				destination = new FileOutputStream(destFile).getChannel();
+				destination.transferFrom(source, 0, source.size());
 
 				ConfirmDialogController.contentText = "Database Successfuly Restored";
 				// show and wait
