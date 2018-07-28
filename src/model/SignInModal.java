@@ -8,11 +8,11 @@ public class SignInModal extends Credentials {
 		return authentication(username, password);
 	}
 
-	protected String securityQuestion() {
+	public String securityQuestion() {
 		return getSecurityQuestion();
 	}
 
-	protected boolean isSecurityAnswerIsRight(String answer) {
+	public boolean isSecurityAnswerIsRight(String answer) {
 		boolean result = false;
 		if (answer.equals(getSecurityAnswer())) {
 			result = true;
@@ -21,7 +21,7 @@ public class SignInModal extends Credentials {
 		return result;
 	}
 
-	protected boolean isUsernameIsRight(String username) {
+	public boolean isUsernameIsRight(String username) {
 		boolean result = false;
 		if (username.equals(getUsername())) {
 			result = true;
@@ -30,7 +30,7 @@ public class SignInModal extends Credentials {
 		return result;
 	}
 
-	protected boolean isPasswordIsRight(String pass) {
+	public boolean isPasswordIsRight(String pass) {
 		boolean result = false;
 		if (pass.equals(getPassword())) {
 			result = true;

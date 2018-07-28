@@ -40,4 +40,22 @@ public class GlobalID extends DatabaseConnection {
 		}
 	}
 
+	public static boolean idDataExists() {
+		String sql = "SELECT * FROM System_Settings";
+		try (Connection conn = connector();
+				Statement stmt = conn.createStatement();
+				ResultSet result = stmt.executeQuery(sql)) {
+
+			if (result.next()) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }

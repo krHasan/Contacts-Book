@@ -16,7 +16,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignInController">
    <top>
@@ -32,19 +31,7 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Label id="heading" alignment="CENTER" focusTraversable="false" layoutY="5.0" text="Contacts Manager" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                  <Label id="subtitle" alignment="CENTER" focusTraversable="false" layoutY="70.0" textFill="#fffdfd" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <font>
-                        <Font name="Purisa" size="24.0" />
-                     </font></Label>
-                  <ImageView fitHeight="36.0" fitWidth="438.0" layoutX="182.0" layoutY="76.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/subTitle.png" />
-                     </image>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </ImageView>
+                  <Label id="heading" alignment="CENTER" focusTraversable="false" layoutY="9.0" text="Contacts Book" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </children></HBox>

@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import database.access.AutoCompleteData;
+import database.access.TableAccess;
 import enums.Contacts;
 import javafx.geometry.Side;
 import javafx.scene.Cursor;
@@ -22,6 +23,7 @@ public class AutoComplete {
 	// ------------------------GlobalVariables----------------------------
 	private static ContextMenu entriesPopup = new ContextMenu();
 	static AutoCompleteData fromDatabase = new AutoCompleteData();
+	static TableAccess tblAccess = new TableAccess();
 
 	// ------------------------MainCode----------------------------
 	public static void autocomplete(TextField txt, Contacts name) {

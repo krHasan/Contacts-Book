@@ -8,8 +8,12 @@ import database.access.SystemAccess;
 
 public class DatabaseConnection {
 	Connection connection;
-	public final static String dbAddress = "/home/" + System.getProperty("user.name")
-			+ "/.contacts-manager/ContactsList.db";
+
+	public final static String dbDirectory = "/home/" + System.getProperty("user.name") + "/.contacts-book/";
+
+	public final static String dbName = "ContactsList.db";
+
+	public final static String dbAddress = dbDirectory + dbName;
 
 	public DatabaseConnection() {
 		connection = connector();
@@ -27,14 +31,11 @@ public class DatabaseConnection {
 			// for Linux distribution
 			String url = "jdbc:sqlite:" + dbAddress;
 
-			// for Mac distribution
-			// String url =
-			// "jdbc:sqlite:/Users/"+System.getProperty("user.name")+"/Money-ManagerDB/ContactsList.db";
-
 			conn = DriverManager.getConnection(url);
 
 		} catch (SQLException | ClassNotFoundException e) {
 			System.out.println(e.getMessage());
+			e.printStackTrace();
 		}
 		return conn;
 	}

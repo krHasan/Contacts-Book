@@ -8,6 +8,8 @@ import controller.dialog.ErrorDialogController;
 import controller.dialog.InputDialogController;
 import controller.dialog.PasswordDialogController;
 import controller.dialog.WarningDialogController;
+import database.CreateDatabase;
+import database.access.Credentials;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -22,7 +24,7 @@ import operation.GetDialog;
 import operation.GetScence;
 import system.DeleteUserCredentials;
 
-public class SignInController extends SignInModal {
+public class SignInController {
 
 	/////////////////////////////////// ObjectsDeclaration////////////////////////////////
 	@FXML
@@ -44,18 +46,22 @@ public class SignInController extends SignInModal {
 	private Label lblWarning;
 
 	/////////////////////////////////// GlobalVariables////////////////////////////////
+	SignInModal model;
 	GetScence getWindow = new GetScence();
 	GetDialog getDialog = new GetDialog();
 
 	/////////////////////////////////// GeneralCode////////////////////////////////
 	@FXML
 	private void initialize() {
+		CreateDatabase.createDatabase();
+		
+		model = new SignInModal();
 
-		if (!isDBConnected()) {
+		if (!model.isDBConnected()) {
 			lblWarning.setText("Database not found");
 			lblNewUser.setDisable(true);
 			allNodesDown();
-		} else if (!isUserPresent()) {
+		} else if (!Credentials.isUserPresent()) {
 			allNodesDown();
 		}
 
@@ -85,7 +91,7 @@ public class SignInController extends SignInModal {
 
 	@FXML
 	private void btnSignIn(ActionEvent event) throws IOException {
-		if (signIn(txtUsername.getText(), txtPassword.getText())) {
+		if (model.signIn(txtUsername.getText(), txtPassword.getText())) {
 			getWindow.dashboard(thisStageInfo());
 		} else {
 			lblWarning.setText("Username or Password is Wrong");
@@ -102,14 +108,14 @@ public class SignInController extends SignInModal {
 	private void lblForgotPassword(MouseEvent e) {
 		// calling the input dialog
 		InputDialogController.headerText = "Answer The Question";
-		InputDialogController.contentText = securityQuestion();
+		InputDialogController.contentText = model.securityQuestion();
 
 		// show and wait
 		getDialog.inputDialog(thisStageInfo());
 		((Scene) btnSignIn.getScene()).getRoot().setEffect(null);
 
 		if (InputDialogController.btnOKpressed) {
-			if (isSecurityAnswerIsRight(InputDialogController.answer)) {
+			if (model.isSecurityAnswerIsRight(InputDialogController.answer)) {
 				getWindow.forgotPassword(thisStageInfo());
 			} else {
 				ErrorDialogController.headerText = "Wrong Answer";
@@ -123,7 +129,7 @@ public class SignInController extends SignInModal {
 
 	@FXML
 	private void lblNewUser(MouseEvent e) {
-		if (isUserPresent()) {
+		if (Credentials.isUserPresent()) {
 
 			WarningDialogController.headerText = "User Exists";
 			WarningDialogController.contentText = "You have to delete this user to create a new one.";
@@ -144,7 +150,7 @@ public class SignInController extends SignInModal {
 				if (InputDialogController.btnOKpressed) {
 
 					// username is right
-					if (isUsernameIsRight(InputDialogController.answer)) {
+					if (model.isUsernameIsRight(InputDialogController.answer)) {
 
 						// show and wait
 						getDialog.passwordDialog(thisStageInfo());
@@ -154,10 +160,10 @@ public class SignInController extends SignInModal {
 						if (PasswordDialogController.btnOKpressed) {
 
 							// password is right
-							if (isPasswordIsRight(PasswordDialogController.answer)) {
+							if (model.isPasswordIsRight(PasswordDialogController.answer)) {
 
 								InputDialogController.headerText = "Answer The Question";
-								InputDialogController.contentText = securityQuestion();
+								InputDialogController.contentText = model.securityQuestion();
 
 								// show and wait
 								getDialog.inputDialog(thisStageInfo());
@@ -167,7 +173,7 @@ public class SignInController extends SignInModal {
 								if (InputDialogController.btnOKpressed) {
 
 									// answer is right
-									if (isSecurityAnswerIsRight(InputDialogController.answer)) {
+									if (model.isSecurityAnswerIsRight(InputDialogController.answer)) {
 
 										// call delete class and delete user data
 										new DeleteUserCredentials().deleteAllData();
