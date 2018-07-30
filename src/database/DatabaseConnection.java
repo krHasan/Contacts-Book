@@ -30,7 +30,7 @@ public class DatabaseConnection {
 
 			// for Linux distribution
 			String url = "jdbc:sqlite:" + dbAddress;
-
+			
 			conn = DriverManager.getConnection(url);
 
 		} catch (SQLException | ClassNotFoundException e) {

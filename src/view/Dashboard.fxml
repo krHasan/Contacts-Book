@@ -98,19 +98,19 @@
 					<children>
 						<Button fx:id="btnContactsList" mnemonicParsing="false" onMouseClicked="#btnContactsList" styleClass="btnContactsList" text="Contacts List" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
                      <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
+                        <Cursor fx:constant="HAND" />
                      </cursor></Button>
 						<Button fx:id="btnAddNewContact" mnemonicParsing="false" onMouseClicked="#btnAddNewContact" prefWidth="152.0" styleClass="btnAddNewContact" text="Add New Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                      <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
+                        <Cursor fx:constant="HAND" />
                      </cursor></Button>
 						<Button fx:id="btnDeleteContacts" mnemonicParsing="false" onMouseClicked="#btnDeleteContacts" styleClass="btnDeleteContact" text="Delete Contact" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                      <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
+                        <Cursor fx:constant="HAND" />
                      </cursor></Button>
 						<Button fx:id="btnSettings" mnemonicParsing="false" onMouseClicked="#btnSettings" styleClass="btnSettings" text="Settings" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
                      <cursor>
-                        <Cursor fx:constant="OPEN_HAND" />
+                        <Cursor fx:constant="HAND" />
                      </cursor></Button>
 					</children>
 				</GridPane>

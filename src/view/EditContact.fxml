@@ -98,7 +98,7 @@
             <Label focusTraversable="false" stylesheets="@../css/global/label.css" text="Priority" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.valignment="BOTTOM" />
             <Button fx:id="btn" mnemonicParsing="false" onMouseClicked="#btn" styleClass="btnEditContact" stylesheets="@../css/global/button.css" text="Update" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor></Button>
             <TextField fx:id="txtName" onKeyReleased="#txtName" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
             <TextField fx:id="txtNumber1" onKeyReleased="#txtNumber1" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -107,7 +107,7 @@
             <ComboBox fx:id="cmboPriority" styleClass="text-field" stylesheets="@../css/global/textField.css" GridPane.columnIndex="1" GridPane.rowIndex="8" />
             <Button mnemonicParsing="false" onMouseClicked="#btnCancel" styleClass="btn-cancel" stylesheets="@../css/global/button.css" text="Cancel" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="CENTER">
                <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
          </children>

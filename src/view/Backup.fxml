@@ -87,13 +87,13 @@
             <Label fx:id="lblBackup" focusTraversable="false" stylesheets="@../css/global/label.css" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button fx:id="btnBackup" mnemonicParsing="false" onMouseClicked="#btnBackup" styleClass="btnBackup" stylesheets="@../css/global/button.css" text="Backup" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
             <Label fx:id="lblRestore" focusTraversable="false" stylesheets="@../css/global/label.css" text="Label" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
             <Button fx:id="btnRestore" mnemonicParsing="false" onMouseClicked="#btnRestore" styleClass="btnRestore" stylesheets="@../css/global/button.css" text="Restore" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
+                  <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
          </children>

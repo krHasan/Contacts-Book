@@ -68,11 +68,11 @@
                      <children>
                         <Button fx:id="btnDelete" mnemonicParsing="false" onMouseClicked="#btnDelete" styleClass="btnDeleteContact" stylesheets="@../css/global/button.css" text="Delete" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
                            <cursor>
-                              <Cursor fx:constant="OPEN_HAND" />
+                              <Cursor fx:constant="HAND" />
                            </cursor></Button>
                         <Button fx:id="btnCancel" mnemonicParsing="false" onMouseClicked="#btnCancel" styleClass="btn-cancel" stylesheets="@../css/global/button.css" text="Cancel" GridPane.columnIndex="1">
                            <cursor>
-                              <Cursor fx:constant="OPEN_HAND" />
+                              <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
                      </children>

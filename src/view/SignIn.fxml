@@ -23,7 +23,8 @@
          <children>
             <AnchorPane prefHeight="120.0" prefWidth="800.0">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="35.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
+                  <Label id="heading" alignment="CENTER" focusTraversable="false" layoutY="9.0" text="Contacts Book" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="42.0" layoutY="10.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <image>
                         <Image url="@../images/logo.png" />
                      </image>
@@ -31,7 +32,6 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </ImageView>
-                  <Label id="heading" alignment="CENTER" focusTraversable="false" layoutY="9.0" text="Contacts Book" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
          </children></HBox>
