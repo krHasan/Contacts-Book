@@ -124,6 +124,6 @@ First I would like to thanks the library makers, their enormous hard work let us
 
 
 ## License
-MIT (do whatever you want to do :simple_smile: )
+MIT (do whatever you want to do :smile: )
 
 Made by [krHasan](https://www.facebook.com/Bappikhandoker)
