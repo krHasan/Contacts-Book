@@ -1,5 +1,6 @@
 # Contacts-Book
-It's a desktop application build with JavaFX framework. User can add contacts with customer name, number, address and customer priority. No doubt it is mainly focused for the business contacts. That's why I use 'Customer Name' instead of 'Name', here 'Priority' comes to a meaning. Obviously Contacts-Book have Edit and Delete option also. 
+A desktop application build with JavaFX framework. User can add contacts with customer name, number, address and customer priority. No doubt it is mainly focused for the business contacts. That's why I use 'Customer Name' instead of 'Name' and 'Priority' for the customer ratingsho. Obviously Contacts-Book have Edit and Delete option also. 
+
 
 ## Built With
 -		Language: Java
@@ -7,23 +8,27 @@ It's a desktop application build with JavaFX framework. User can add contacts wi
 -		Database: SQLite
 -   	Ant Build
 
+
 ## Workthrough
 Generally a contacts saving application contains very common features like adding, editing and deleting contacts. 'Contacts-Book' have all that with some focusing features. 
 
+
 ### Autocomplete 
-It shows up to 5 autocomplete best matching suggestions based on the data on it's database. It gives a message to user that if the input **Information are already is in the database** or not. As user click on a suggestion the text field will fill up with that.
+It shows up to 5 autocomplete best matching suggestions based on the data on it's database. It gives a message to user that if the input _Information are already is in the database_ or not. As user click on a suggestion the text field will fill up with that.
 <p align="center">
   <img src="/files/autosuggestions.png?raw=true">
 </p>
 
+
 ### Button Changes
-As long as the **Required field** will not filled user will show the cancel button. All fields are filled up the button will changed and ready for action.
+As long as the _Required field_ will not filled user will show the cancel button. All fields are filled up the button will changed and ready for action.
 <p align="center">
   <img src="/files/btnChanges.png?raw=true">
 </p>
 
+
 ### Copy to Clipboard
-When user need to copy a information from the table, how do they do it. A non-editable table won't let user to select its content. So I added copy to clipboard facility. All you have to do is **Click Once** on the cell whose text you want to get, it will copy to your clipboard. You just past and use it.
+When user need to copy a information from the table, how do they do it. A non-editable table won't let user to select its content. So I added copy to clipboard facility. All you have to do is _Click Once_ on the cell whose text you want to get, it will copy to your clipboard. You just past and use it.
 <p align="center">
   <img src="/files/copy.png?raw=true">
 </p>
@@ -31,11 +36,13 @@ When user need to copy a information from the table, how do they do it. A non-ed
   <img src="/files/past.png?raw=true">
 </p>
 
+
 ### Three Clicks to get Edit option
-I intentionally didn't add any button or menu option to go to contact edit window. The only way is you have to **Click 3 Times** on that contact row whose information you want to update.
+I intentionally didn't add any button or menu option to go to contact edit window. The only way is you have to _Click 3 Times_ on that contact row whose information you want to update.
 <p align="center">
   <img src="/files/3click.png?raw=true">
 </p>
+
 
 ### Custom Dialog
 The built-in JavaFX Dialog isn't look very pretty and you have no chance to edit its graphics. So I let it go and create my own custom dialog window. They are very nice looking and works as like as the built-in do.
@@ -43,17 +50,20 @@ The built-in JavaFX Dialog isn't look very pretty and you have no chance to edit
   <img src="/files/dialogs.png?raw=true">
 </p>
 
+
 ### Data Backup and Restore
 As the contacts are very important to persistent so I let user to backup a copy of their database to anywhere to their system and also restore when they needed. 
 <p align="center">
   <img src="/files/backup.png?raw=true">
 </p>
 
+
 ### Menu With Icons
 And here comes the Menu. As like dialog the built-in menu also looks very ancient. So I added some css to give a stylish looking menu items with some meaningful icons.
 <p align="center">
   <img src="/files/menu.png?raw=true">
 </p>
+
 
 ### Focusing Windows
 The above described features will be shown through this below windows.
@@ -78,7 +88,7 @@ The above described features will be shown through this below windows.
 
 
 ## Test It
-Wanna test this application with your won. **Download** it form the given links (Choose it according to your platform).
+Wanna test this application with your won. _Download_ it form the given links (Choose it according to your platform).
 
 > [Linux (64)](https://drive.google.com/open?id=1BG-veIM0ZmqdE036JvDR8-gFYM-f4bVI)
 
@@ -88,7 +98,7 @@ Wanna test this application with your won. **Download** it form the given links 
 
 
 ## Getting Started
-Want to contribute? Great! Here is the process
+Want to contribute? Great! :thumbsup:  Here is the process
 
 #### Prerequisites
  - [Install git](https://www.atlassian.com/git/tutorials/install-git)
@@ -100,7 +110,8 @@ Want to contribute? Great! Here is the process
 #### Installing
  - [Clone](https://help.github.com/articles/cloning-a-repository) the repository.
  - Add `sqlite-jdbc-3.23.1.jar` from Libraries folder as external jar file in the built path.
-Ready to develop. Cool yeah!
+ 
+Ready to develop. Cool yeah! :snowflake: :snowflake: :snowflake:
 
 #### Deployment
 In the case of deploy the application, these two sites help me most
@@ -111,9 +122,7 @@ In the case of deploy the application, these two sites help me most
 ## Acknowledgments
 First I would like to thanks the library makers, their enormous hard work let us opportunity to build the application what we want. Then obviously 'StackOverflow' and 'Google'.
 
+
 ## License
-----
-
-MIT (do whatever you want to do)
-
+MIT :simple_smile: (do whatever you want to do) :smile:
 Made by [krHasan](https://www.facebook.com/Bappikhandoker)
